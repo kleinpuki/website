@@ -1,0 +1,66 @@
+{
+    "keys": [
+        {
+            "code": "SMP-KEY-1882",
+            "creator": "Niklas1882",
+            "status": "Aktiv"
+        }
+    ],
+    "team": [
+        {
+            "name": "Niklas1882",
+            "role": "Owner"
+        },
+        {
+            "name": "Test123",
+            "role": "Supporter"
+        }
+    ],
+    "users": [
+        {
+            "username": "Niklas1882",
+            "passHash": "$2y$10$z4PFaWnBw31JMz/p2a3fBO8N8q.61ABtbBxEx3BwKTAN8L27AQ5ti",
+            "permissions": {
+                "keys": true,
+                "team": true,
+                "news": true,
+                "rankDelete": true
+            }
+        }
+    ],
+    "news": [
+        {
+            "title": "Server Start",
+            "category": "Update",
+            "text": "Online!",
+            "date": "21.08.2026"
+        }
+    ],
+    "gallery": [
+        {
+            "url": "spawn.jpg",
+            "title": "Der Spawn"
+        }
+    ],
+    "serverIp": "kumpelsmp600.mcsh.io",
+    "joinSteps": [
+        {
+            "title": "Schritt 1: Minecraft starten",
+            "desc": "Öffne deine Minecraft Java Edition (Server Version 1.21.11 geht aber auch mit anderer)."
+        },
+        {
+            "title": "Schritt 2: Multiplayer auswählen",
+            "desc": "Klicke im Hauptmenü auf Multiplayer (Mehrspieler)."
+        },
+        {
+            "title": "Schritt 3: Server hinzufügen",
+            "desc": "Klicke unten auf Server hinzufügen. Gib als Servername z.B. Kumpel SMP und als Serveradresse kumpelsmp600.mcsh.io ein."
+        },
+        {
+            "title": "Schritt 4: Einloggen & Spaß haben!",
+            "desc": "Klicke auf den Server und trete bei. Wir freuen uns auf dich!"
+        }
+    ],
+    "auditLogs": [],
+    "activeTalkUsers": []
+}

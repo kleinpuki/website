@@ -1,0 +1,17 @@
+<FilesMatch "\.(json)$">
+    Require all denied
+</FilesMatch>
+<IfModule !mod_authz_core.c>
+    <FilesMatch "\.(json)$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+<FilesMatch "^(smp_bans|smp_chat|smp_typing|smp_talk|smp_signal)\.json$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(tmp|bak|old)$">
+    Require all denied
+</FilesMatch>

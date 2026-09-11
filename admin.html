@@ -1,0 +1,2688 @@
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kumpel SMP 600 | Admin-Zentrale (Hoster DB)</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+<style>
+:root{--bg:#0a0d0b;--panel:#111613;--panel2:#151b17;--line:#28322c;--text:#eef2ef;--muted:#9aa59e;--accent:#8bd66f;--accent2:#63b95b;--danger:#e46b6b;--warning:#d9b45c;--info:#6ea8e8;--radius:12px;--shadow:0 12px 35px rgba(0,0,0,.24)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}button,input,select,textarea{font:inherit}.site-header{position:sticky;top:0;z-index:100;background:rgba(10,13,11,.97);border-bottom:1px solid var(--line)}.header-inner{width:min(1240px,calc(100% - 28px));min-height:64px;margin:auto;display:flex;align-items:center;gap:24px}.brand{color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px}.brand-mark{width:34px;height:34px;border:1px solid #3a493e;border-radius:8px;display:grid;place-items:center;color:var(--accent);font-weight:800;background:#151b17}.brand span:last-child{font-size:15px}.brand small{color:var(--accent);margin-left:4px}.main-nav{display:flex;gap:2px;flex:1;overflow:auto}.main-nav a{color:#aeb7b1;text-decoration:none;padding:8px 10px;border-radius:7px;font-size:13px;white-space:nowrap}.main-nav a:hover{background:#161c18;color:var(--text)}.admin-link{background:var(--accent);color:#10150f!important;text-decoration:none;padding:8px 13px;border-radius:7px;font-size:13px;font-weight:750;white-space:nowrap}.content{width:min(1240px,calc(100% - 28px));margin:auto;padding:34px 0 60px}.form-card{width:min(440px,100%);margin:50px auto;padding:30px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.form-card h2{margin:0 0 20px;color:var(--text);font-size:24px}.form-card p,.switch-text{color:var(--muted)}input,select,textarea{width:100%;background:#0c100e;color:var(--text);border:1px solid #344039;border-radius:8px;padding:11px 12px;margin:7px 0;outline:none}input::placeholder,textarea::placeholder{color:#69746d}input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 2px rgba(139,214,111,.08)}select option{background:#111613;color:#fff}.captcha-text{color:var(--accent);font-size:13px;text-align:left;margin-top:10px}.btn-submit,.btn-action,.btn-save,.btn-delete{border:0;border-radius:8px;cursor:pointer;font-weight:700}.btn-submit{width:100%;padding:11px;background:var(--accent);color:#0c120b;margin-top:10px}.btn-action{padding:9px 13px;background:#1d2a21;color:var(--text);border:1px solid #34483a}.btn-action:hover{border-color:var(--accent);color:var(--accent)}.btn-save{padding:10px 15px;background:var(--accent);color:#0b120a;margin-top:18px}.btn-delete{padding:7px 10px;background:#4a2020;color:#ffdede;border:1px solid #713838}.switch-text span{color:var(--accent);cursor:pointer}.dashboard-layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:18px;align-items:start}.dashboard-sidebar{position:sticky;top:82px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow);min-width:0;box-sizing:border-box}.sidebar-head{padding:10px 10px 13px;border-bottom:1px solid var(--line);margin-bottom:8px}.sidebar-head strong{display:block}.sidebar-head span{font-size:12px;color:var(--muted)}.sidebar-btn{width:100%;display:flex;align-items:center;gap:10px;padding:10px 11px;margin:2px 0;background:transparent;border:0;border-radius:8px;color:#aeb8b1;text-align:left;cursor:pointer;font-size:13px}.sidebar-btn:hover{background:#171e19;color:var(--text)}.sidebar-btn.active{background:#1b2b1e;color:var(--accent)}.sidebar-btn i{width:18px;text-align:center}.sidebar-btn.logout{margin-top:10px;padding-top:12px;border-top:1px solid var(--line);color:#e58b8b}.sidebar-badge{margin-left:auto;background:#a95757;color:#fff;border-radius:10px;padding:1px 6px;font-size:10px}.sidebar-counter{margin-left:auto;color:#6f7c73;font-size:11px}.dash-content-area{min-width:0}.card{display:none;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}.card.active{display:block}.card h2{font-size:21px;margin:0 0 5px;color:var(--text);display:flex;align-items:center;gap:9px}.card h2 i{color:var(--accent);font-size:17px}.card>p{color:var(--muted)}.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:20px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);font-weight:800}.subtext{font-size:13px;color:var(--muted);margin:3px 0 0}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}.stat{background:#0c110e;border:1px solid var(--line);border-radius:10px;padding:15px}.stat span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.stat strong{display:block;font-size:25px;margin-top:5px}.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.quick{padding:14px;background:#141a16;border:1px solid var(--line);border-radius:10px;cursor:pointer;color:var(--text);text-align:left}.quick:hover{border-color:#466149}.quick strong{display:block}.quick span{display:block;color:var(--muted);font-size:12px;margin-top:2px}.data-table{width:100%;border-collapse:collapse;margin-top:15px;display:block;overflow:auto}.data-table thead,.data-table tbody{width:100%}.data-table th,.data-table td{padding:11px 9px;border-bottom:1px solid var(--line);text-align:left;font-size:13px;vertical-align:top}.data-table th{color:#b7c1ba;font-weight:700}.data-table td{color:#d7ddd9}.data-table tr:hover td{background:#121814}.chat-container{background:#0b100d;border:1px solid var(--line);border-radius:9px}.talk-main-stage,.talk-sidebar-panel{background:#0b100d!important;border-color:var(--line)!important}.modal-content{background:var(--panel)!important;color:var(--text)!important;border-color:var(--line)!important}.modal-content p{color:var(--muted)!important}.device-menu{background:#111613!important;border-color:var(--line)!important}.profile-save-row{display:flex;gap:8px;flex-wrap:wrap}.notice-preview{padding:13px;border:1px solid var(--line);border-radius:9px;background:#0d120f;color:var(--text);margin-top:10px}.section-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.danger-zone{border:1px solid #512d2d;background:#1a1010;border-radius:10px;padding:14px}.danger-zone strong{color:#f19a9a}.status-pill{display:inline-block;padding:3px 7px;border-radius:999px;background:#19311c;color:#9ee38c;font-size:11px}.muted{color:var(--muted)}.kbd{font-size:10px;border:1px solid #3a443d;background:#161c18;border-radius:4px;padding:2px 5px;color:#9aa59e}footer{display:none}
+@media(max-width:900px){.dashboard-layout{grid-template-columns:1fr}.dashboard-sidebar{position:static;display:flex;gap:4px;overflow:auto;padding:8px}.sidebar-head{display:none}.sidebar-btn{width:auto;flex:0 0 auto;white-space:nowrap}.sidebar-btn.logout{margin-top:0;border-top:0;padding-top:10px}.stats-grid{grid-template-columns:repeat(2,1fr)}.section-grid{grid-template-columns:1fr}.main-nav{order:3;flex-basis:100%}.header-inner{flex-wrap:wrap;padding:8px 0}.admin-link{margin-left:auto}.content{padding-top:24px}}
+@media(max-width:560px){.stats-grid,.quick-grid{grid-template-columns:1fr}.card{padding:17px}.brand span:last-child{display:none}.main-nav a{font-size:12px;padding:7px 8px}.data-table th,.data-table td{font-size:12px}}
+
+.arena-upload-box{margin-top:14px;padding:16px;background:#0d120f;border:1px solid var(--line);border-radius:10px}.arena-upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.arena-file-label{display:block;color:#cdd5cf;font-size:13px;font-weight:700}.arena-file-label input{margin-top:8px;padding:9px}.arena-upload-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.arena-upload-actions .btn-save{margin-top:12px}.arena-help{margin-top:10px}.arena-note{display:flex;gap:8px;align-items:flex-start;margin-top:12px;padding:11px 13px;background:#151b17;border:1px solid var(--line);border-radius:9px;color:#cbd3cd;font-size:12px}.arena-note strong{color:var(--accent)}.arena-table code,.arena-help code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#cfe8c7}.arena-type{display:inline-block;padding:3px 7px;border:1px solid var(--line);border-radius:999px;font-size:11px;color:#b9c4bc}.arena-delete{white-space:nowrap}
+@media(max-width:700px){.arena-upload-grid{grid-template-columns:1fr}.arena-note{flex-direction:column}.arena-table{white-space:nowrap}}
+.arena-ban-panel{margin-top:20px;padding:16px;background:#0d120f;border:1px solid var(--line);border-radius:10px}.arena-ban-panel h3{margin:0 0 6px;color:var(--text)}.ban-lists{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.ban-lists>div{background:#111713;border:1px solid var(--line);border-radius:9px;padding:12px;min-width:0}.ban-lists ul{list-style:none;padding:0;margin:8px 0 0}.ban-lists li{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid #202821;color:#d7ddd9;overflow-wrap:anywhere}.ban-lists li:last-child{border-bottom:0}.ban-remove{padding:5px 8px!important;min-height:0!important}@media(max-width:700px){.ban-lists{grid-template-columns:1fr}}</style>
+<style>
+
+
+html{overflow-x:hidden;scroll-behavior:smooth}
+body{overflow-x:hidden;min-width:0}
+img,video,iframe{max-width:100%;height:auto}
+button,input,select,textarea{max-width:100%;box-sizing:border-box}
+table{max-width:100%}
+pre{max-width:100%;overflow:auto}
+.content,main,.container,.page,.site-main{box-sizing:border-box}
+@media (max-width:1100px){
+  .content{width:min(100% - 32px,1240px)}
+  .dashboard-layout{grid-template-columns:205px minmax(0,1fr);gap:14px}
+  .dashboard-sidebar{top:72px}
+}
+@media (max-width:900px){
+  .content{width:calc(100% - 24px);padding-left:0;padding-right:0}
+  .dashboard-layout{grid-template-columns:1fr;min-width:0}
+  .dashboard-sidebar{position:static;width:100%;box-sizing:border-box;overflow-x:auto}
+  .dashboard-sidebar nav{display:flex;min-width:max-content}
+  .main-nav{min-width:0;scrollbar-width:none}
+  .main-nav::-webkit-scrollbar{display:none}
+  .section-grid,.stats-grid,.quick-grid{min-width:0}
+  .card,.panel,.section,.form-card{min-width:0;max-width:100%;box-sizing:border-box}
+  .data-table{display:block;width:100%;overflow-x:auto;white-space:nowrap}
+  .data-table table{min-width:620px}
+}
+@media (max-width:700px){
+  .site-header{position:sticky;top:0;z-index:1000}
+  .header-inner{width:calc(100% - 20px);padding:8px 0;gap:7px}
+  .brand{flex:0 0 auto}
+  .main-nav{order:3;flex-basis:100%;width:100%;overflow-x:auto}
+  .main-nav a{font-size:12px;padding:7px 9px}
+  .admin-link{font-size:12px;padding:7px 10px}
+  .content{padding-top:20px;padding-bottom:40px}
+  h1{font-size:clamp(24px,7vw,34px);line-height:1.12}
+  h2{font-size:clamp(19px,5vw,25px)}
+  .card{padding:16px}
+  .form-row,.grid-2,.grid-3{grid-template-columns:1fr!important}
+  .actions,.button-row{flex-wrap:wrap}
+  .actions button,.button-row button,.btn-save,.btn-delete{min-height:42px}
+}
+@media (max-width:480px){
+  .content{width:calc(100% - 16px)}
+  .header-inner{width:calc(100% - 16px)}
+  .brand span:last-child{display:block}
+  .brand strong{font-size:13px}
+  .brand small{font-size:11px}
+  .main-nav a{font-size:11px;padding:7px 8px}
+  .stats-grid{grid-template-columns:1fr!important}
+  .card{padding:14px}
+  input,select,textarea{font-size:16px!important}
+  .data-table{font-size:12px}
+}
+
+</style>
+<style id="bernbesse-v8-polish">
+
+:root{--surface:#12171a;--surface2:#171d21;--line:#2a3339;--text:#f3f5f6;--muted:#a1aab0;--accent:#82d66f}
+html,body{max-width:100%;overflow-x:hidden}
+body{min-height:100vh}
+.content,.dashboard-layout,.dash-content-area{min-width:0}
+img,video,iframe{max-width:100%}
+:is(p,li,td,th,label,h1,h2,h3,h4,span,a,button){overflow-wrap:anywhere}
+.site-footer{margin-top:auto!important}
+@media(max-width:900px){
+  .header-inner{align-items:center}
+  .main-nav{overflow-x:auto;overscroll-behavior-x:contain}
+  .dashboard-sidebar{overflow-x:auto}
+}
+@media(max-width:700px){
+  .content{padding-bottom:28px!important}
+  .header-inner{row-gap:6px}
+  .main-nav{padding-bottom:2px}
+  .site-footer{margin-top:24px!important}
+}
+</style><style id="bernbesse-admin-chat-v8"
+
+.chat-container{height:460px;max-height:58vh;overflow-y:auto;overflow-x:hidden;padding:14px;background:#0a0f0c!important;border:1px solid #29352d!important;border-radius:12px;scroll-behavior:smooth;overscroll-behavior:contain}
+.chat-msg{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:start;margin:0 0 14px}
+.chat-msg.grouped{margin-top:-6px}
+.chat-msg.own{grid-template-columns:minmax(0,1fr);justify-items:end}
+.chat-msg.own .chat-avatar-slot{display:none}
+.chat-msg.own .chat-msg-body{align-items:flex-end}
+.chat-msg-body{min-width:0;display:flex;flex-direction:column;align-items:flex-start;max-width:min(78%,720px)}
+.chat-avatar-slot{width:36px;height:36px;flex:0 0 36px}
+.chat-avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;image-rendering:auto;background:#18201b;border:1px solid #344138}
+.chat-msg-header{display:flex;gap:8px;align-items:baseline;max-width:100%;margin:0 0 3px;padding:0 3px}
+.chat-username{font-size:13px;font-weight:750;cursor:pointer;white-space:nowrap;max-width:60vw;overflow:hidden;text-overflow:ellipsis}
+.chat-time{font-size:11px;color:#718078;white-space:nowrap}
+.chat-bubble{max-width:100%;padding:9px 12px;border-radius:12px 12px 12px 4px;background:#151d18;border:1px solid #2a382f;color:#e4e9e6;font-size:14px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.chat-msg.own .chat-bubble{border-radius:12px 12px 4px 12px;background:#1d3a22;border-color:#355f38;color:#f2f7f2}
+.chat-msg.grouped .chat-msg-header{display:none}
+.chat-msg.grouped .chat-avatar{visibility:hidden}
+.chat-day-divider{display:flex;align-items:center;gap:10px;margin:18px 0;color:#718078;font-size:11px}
+.chat-day-divider::before,.chat-day-divider::after{content:"";height:1px;background:#273029;flex:1}
+.chat-system-msg{display:grid;place-items:center;min-height:220px;color:#849088;font-size:13px;text-align:center}
+#chat-scroll-bottom{background:#16231a!important;border:1px solid #35533b!important;color:#d9e8dc!important;display:block;border-radius:8px!important;padding:7px 12px!important;margin:8px auto!important}
+#chat-typing-indicator{color:#829088!important;min-height:20px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#chat-send-btn{min-width:44px;height:44px;padding:0;display:grid;place-items:center}
+#chat-input{height:44px!important}
+@media(max-width:900px){
+ .chat-container{height:52vh;max-height:none;min-height:320px}
+ .chat-msg-body{max-width:88%}
+ .dashboard-sidebar{position:static!important}
+}
+@media(max-width:560px){
+ .chat-container{height:55vh;min-height:280px;padding:10px}
+ .chat-msg{grid-template-columns:30px minmax(0,1fr);gap:8px;margin-bottom:11px}
+ .chat-avatar-slot,.chat-avatar{width:30px;height:30px}
+ .chat-msg-body{max-width:92%}
+ .chat-bubble{font-size:13px;padding:8px 10px}
+ .chat-msg-header{gap:6px}
+ #card-chat > div:last-child{gap:7px!important}
+}
+</style><style id="bernbesse-v9-layout-css"
+
+:root{--page-max:1180px;--page-gutter:clamp(16px,3vw,32px);--content-pad:clamp(28px,5vw,58px)}
+html{width:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
+body{width:100%;max-width:100%;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;margin:0}
+body>*{max-width:100%}
+.site-header{width:100%;flex:0 0 auto;position:sticky;top:0;z-index:1000}
+.header-inner{width:min(var(--page-max),calc(100% - (var(--page-gutter) * 2)))!important;min-height:64px!important;margin:0 auto!important;display:flex!important;align-items:center!important;gap:18px!important;box-sizing:border-box!important}
+.brand{flex:0 0 auto;min-width:0}
+.brand span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.main-nav{min-width:0!important;flex:1 1 auto!important;display:flex!important;align-items:center!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{flex:0 0 auto}
+.admin-link{flex:0 0 auto}
+.mobile-menu-toggle{display:none;border:1px solid var(--line,#2a3339);background:#121814;color:#eaf0ec;border-radius:8px;width:40px;height:40px;cursor:pointer;font-size:18px;align-items:center;justify-content:center}
+.content{width:min(var(--page-max),calc(100% - (var(--page-gutter) * 2)))!important;max-width:var(--page-max)!important;box-sizing:border-box!important;margin:0 auto!important;padding:var(--content-pad) 0 48px!important;flex:1 0 auto}
+.content>*{min-width:0;max-width:100%}
+h1,h2,h3,h4,p,li,td,th,label,legend,button,a{overflow-wrap:anywhere}
+img,svg,video,canvas,iframe{max-width:100%}
+input,select,textarea,button{max-width:100%;box-sizing:border-box}
+.card,.panel,.section,.form-card,.rules-wrapper,.hero,.news-card,.gallery-card{max-width:100%;box-sizing:border-box}
+.site-footer{width:100%!important;flex:0 0 auto!important;margin-top:auto!important;box-sizing:border-box}
+.footer-inner{width:min(var(--page-max),calc(100% - (var(--page-gutter) * 2)))!important;box-sizing:border-box}
+
+body::before,body::after{max-width:100vw}
+
+.team-card{min-width:0!important}
+.team-card .team-info{min-width:0;display:flex;flex:1;flex-direction:column;justify-content:center}
+.team-card .team-info h3,.team-card .team-info p{width:100%;min-width:0}
+
+.dashboard-layout{min-width:0!important}
+.dash-content-area{min-width:0!important;width:100%}
+.card{min-width:0!important;overflow:hidden}
+.card-head{min-width:0;flex-wrap:wrap}
+.stats-grid,.quick-grid,.section-grid,.arena-upload-grid{min-width:0}
+.data-table{max-width:100%;overflow-x:auto;overflow-y:visible}
+
+.chat-container{width:100%;min-width:0;box-sizing:border-box}
+.chat-msg,.chat-msg-body{min-width:0}
+.chat-bubble{max-width:100%;box-sizing:border-box}
+
+:focus-visible{outline:2px solid var(--accent,#82d66f);outline-offset:2px}
+@media (max-width:900px){
+  .header-inner{flex-wrap:nowrap!important;gap:10px!important}
+  .mobile-menu-toggle{display:flex}
+  .main-nav{position:absolute;left:0;right:0;top:100%;width:100%;display:none!important;flex-direction:column!important;align-items:stretch!important;padding:8px max(12px,var(--page-gutter));background:#0c100e;border-bottom:1px solid var(--line,#2a3339);box-shadow:0 12px 24px rgba(0,0,0,.22);box-sizing:border-box;max-height:calc(100vh - 64px);overflow:auto!important}
+  .main-nav.mobile-open{display:flex!important}
+  .main-nav a{padding:11px 12px!important;border-radius:7px!important}
+  .admin-link{margin-left:auto}
+  .content{padding-top:30px!important}
+  .dashboard-layout{grid-template-columns:1fr!important}
+  .dashboard-sidebar{position:static!important;width:100%!important;overflow-x:auto!important}
+}
+@media (max-width:700px){
+  :root{--page-gutter:12px}
+  .header-inner{min-height:58px!important}
+  .brand-mark{width:32px!important;height:32px!important}
+  .brand span:last-child{font-size:14px!important}
+  .admin-link{padding:8px 11px!important}
+  .content{padding-top:24px!important;padding-bottom:32px!important}
+  .team-grid{grid-template-columns:1fr!important}
+  .section-grid,.arena-upload-grid{grid-template-columns:1fr!important}
+  .card{padding:16px!important}
+  .card-head{margin-bottom:14px!important}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .quick-grid{grid-template-columns:1fr!important}
+  .chat-container{min-height:280px!important;height:52vh!important}
+  .chat-msg-body{max-width:90%!important}
+  .talk-room-layout{grid-template-columns:1fr!important}
+  .talk-main-stage{min-height:260px!important}
+  .talk-sidebar-panel{min-width:0!important}
+}
+@media (max-width:480px){
+  .brand span:last-child{display:none}
+  .stats-grid{grid-template-columns:1fr!important}
+  .admin-link{font-size:12px!important}
+  .mobile-menu-toggle{width:38px;height:38px}
+  .content{width:calc(100% - 20px)!important}
+  .footer-inner{width:calc(100% - 20px)!important}
+  .team-card{padding:12px!important}
+  .avatar-container{width:48px!important;height:48px!important;min-width:48px!important}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style></head>
+<body>
+<header class="site-header">
+<div class="header-inner" style="">
+<a aria-label="Kumpel SMP 600 Startseite" class="brand" href="index.html">
+<span class="brand-mark">K</span>
+<span><strong>Kumpel SMP</strong><small>600</small></span>
+</a>
+<nav aria-label="Hauptnavigation" class="main-nav">
+<a href="index.html">Startseite</a>
+<a href="status.html">Status</a>
+<a href="galerie.html">Galerie</a>
+<a href="joinen.html">Beitreten</a>
+<a href="team.html">Team</a>
+<a href="news.html">News</a>
+<a href="leaderboard.html">Bestenlisten</a>
+</nav>
+<a class="admin-link" href="admin.html">Admin</a>
+</div>
+</header>
+<div class="content">
+<div class="form-card" id="login-section">
+<h2>Admin Login</h2>
+<input id="login-user" placeholder="Benutzername" type="text"/>
+<input id="login-pass" placeholder="Passwort" type="password"/>
+<div class="captcha-text" id="captcha-label">Rechenaufgabe: ?</div>
+<input id="captcha-input" placeholder="Ergebnis" type="number"/>
+<button class="btn-submit" onclick="validateLogin()">Einloggen</button>
+<div class="switch-text">Noch kein Konto? <span onclick="switchView('register')">Registrieren</span></div>
+<p id="login-error" style="color: #ff416c; margin-top: 10px; font-size: 0.85rem; display: none;">Falsche Daten oder Captcha!</p>
+</div>
+<div class="form-card" id="register-section" style="display: none;">
+<h2>Admin Registrieren</h2>
+<input id="reg-key" placeholder="Gültigen Admin-Key eingeben" type="text"/>
+<input id="reg-user" placeholder="Benutzername wählen" type="text"/>
+<input id="reg-pass" placeholder="Passwort wählen" type="password"/>
+<button class="btn-submit" onclick="validateRegister()">Registrieren</button>
+<div class="switch-text">Bereits ein Konto? <span onclick="switchView('login')">Einloggen</span></div>
+<p id="reg-error" style="color: #ff416c; margin-top: 10px; font-size: 0.85rem; display: none;"></p>
+</div>
+<div id="dashboard-section">
+<div class="dashboard-layout">
+<div class="dashboard-sidebar">
+<div class="sidebar-head"><strong>Admin-Zentrale</strong><span id="sidebar-user-label">Verwaltung</span></div>
+<button class="sidebar-btn active" onclick="switchTab('overview', this)"><i class="fas fa-gauge-high"></i> Übersicht</button>
+<button class="sidebar-btn" onclick="switchTab('keys', this)"><i class="fas fa-key"></i> Admin Keys</button>
+<button class="sidebar-btn" onclick="switchTab('team', this)"><i class="fas fa-users-cog"></i> Team &amp; Ränge</button>
+<button class="sidebar-btn" onclick="switchTab('permissions', this)"><i class="fas fa-shield-alt"></i> Nutzer-Berechtigungen</button>
+<button class="sidebar-btn" onclick="switchTab('news', this)"><i class="fas fa-bullhorn"></i> News Management</button>
+<button class="sidebar-btn" onclick="switchTab('gallery', this)"><i class="fas fa-images"></i> Galerie Verwaltung</button>
+<button class="sidebar-btn" onclick="switchTab('arena', this)"><i class="fas fa-cubes"></i> Arena Dateien</button>
+<button class="sidebar-btn" onclick="switchTab('join', this)"><i class="fas fa-server"></i> Join &amp; Schritte Config</button>
+<button class="sidebar-btn" onclick="switchTab('chat', this)"><i class="fas fa-comments"></i> Team Chat <span class="sidebar-badge" id="chat-badge">0</span></button>
+<button class="sidebar-btn" onclick="switchTab('talk', this)"><i class="fas fa-headset"></i> Admin Voice Talk <span class="sidebar-counter" id="talk-sidebar-count">(0 Personen)</span></button>
+<button class="sidebar-btn" onclick="switchTab('audit', this)"><i class="fas fa-history"></i> Admin-Protokoll <span class="sidebar-badge" id="audit-badge">0</span></button>
+<button class="sidebar-btn" onclick="switchTab('system', this)"><i class="fas fa-sliders"></i> System &amp; Werkzeuge</button>
+<button class="sidebar-btn" onclick="switchTab('maintenance', this)"><i class="fas fa-screwdriver-wrench"></i> Wartungsmodus</button>
+<button class="sidebar-btn logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Abmelden</button>
+</div>
+<div class="dash-content-area">
+<div class="card active" id="card-overview">
+<div class="card-head">
+<div><div class="eyebrow">Kontrollzentrum</div><h2><i class="fas fa-gauge-high"></i> Übersicht</h2><p class="subtext">Wichtige Daten und schnelle Aktionen an einem Ort.</p></div>
+<button class="btn-action" onclick="refreshAdminData()"><i class="fas fa-rotate"></i> Aktualisieren</button>
+</div>
+<div class="stats-grid">
+<div class="stat"><span>Admin-Nutzer</span><strong id="stat-users">0</strong></div>
+<div class="stat"><span>Aktive Keys</span><strong id="stat-keys">0</strong></div>
+<div class="stat"><span>Team</span><strong id="stat-team">0</strong></div>
+<div class="stat"><span>News</span><strong id="stat-news">0</strong></div>
+</div>
+<div class="quick-grid">
+<button class="quick" onclick="switchTab('news')"><strong>Neue News</strong><span>Eine Meldung für die Website vorbereiten</span></button>
+<button class="quick" onclick="switchTab('gallery')"><strong>Galerie verwalten</strong><span>Bilder und Titel bearbeiten</span></button>
+<button class="quick" onclick="switchTab('arena')"><strong>Arena Dateien</strong><span>PNG und PNG.MCMETA verwalten</span></button>
+<button class="quick" onclick="switchTab('join')"><strong>Server &amp; Hinweis</strong><span>IP, Join-Schritte und Hinweis ändern</span></button>
+<button class="quick" onclick="switchTab('chat')"><strong>Team-Chat</strong><span>Direkt zu den aktuellen Nachrichten</span></button>
+</div>
+</div>
+<div class="card active" id="card-keys">
+<h2><i class="fas fa-key"></i> Admin Keys Management (Max. 5 aktiv)</h2>
+<button class="btn-action" onclick="generateKey()"><i class="fas fa-plus"></i> Neuen Key generieren</button>
+<table class="data-table">
+<thead><tr><th>Key-Code</th><th>Ersteller</th><th>Status</th><th>Aktion</th></tr></thead>
+<tbody id="key-table-body"></tbody>
+</table>
+</div>
+<div class="card" id="card-team">
+<h2><i class="fas fa-users-cog"></i> Team &amp; Ränge System</h2>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+<input id="team-search" oninput="renderTeamTable()" placeholder="Team durchsuchen..." style="flex:1;min-width:180px;margin:0" type="search"/>
+<button class="btn-action" type="button" onclick="refreshTeamFromServer()">Aktualisieren</button>
+<button class="btn-action" type="button" onclick="exportTeam()">Export</button>
+<label class="btn-action" style="cursor:pointer">Import<input id="team-import" type="file" accept="application/json,.json" onchange="importTeam(this.files[0])" hidden></label>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center;">
+<input id="new-member-name" placeholder="Minecraft Name..." style="flex:1;min-width:150px;margin:0;" type="text"/>
+<select id="new-member-role" style="flex: 1; min-width: 140px; margin: 0;">
+<option value="Owner">👑 Owner</option>
+<option value="Co-Owner">⭐ Co-Owner</option>
+<option value="Developer">💻 Developer</option>
+<option value="Admin">🛡️ Admin</option>
+<option value="Moderator">⚖️ Moderator</option>
+<option value="Supporter">💬 Supporter</option>
+<option value="Builder">🧱 Builder</option>
+</select>
+<button class="btn-action" onclick="addTeamMember()">Hinzufügen</button>
+</div>
+<table class="data-table">
+<thead><tr><th>Name</th><th>Rang</th><th>Aktionen</th></tr></thead>
+<tbody id="team-table-body"></tbody>
+</table>
+<button class="btn-save" onclick="saveTeamChanges()"><i class="fas fa-save"></i> Team speichern</button>
+</div>
+<div class="card" id="card-permissions">
+<h2><i class="fas fa-shield-alt"></i> Nutzer-Berechtigungen (Nur Owner)</h2>
+<table class="data-table">
+<thead>
+<tr><th>Admin Benutzer</th><th>Admin-Keys</th><th>Team-Verwaltung</th><th>News &amp; Galerie</th><th>Config / Löschen</th></tr>
+</thead>
+<tbody id="perms-table-body"></tbody>
+</table>
+<button class="btn-save" onclick="savePermissions()"><i class="fas fa-save"></i> Berechtigungen speichern</button>
+</div>
+<div class="card" id="card-news">
+<h2><i class="fas fa-bullhorn"></i> News Management</h2>
+<input id="news-title" placeholder="News Titel..." type="text"/>
+<select id="news-category">
+<option value="Update">StatusUpdate</option>
+<option value="Event">🎉 Event</option>
+<option value="Team">TeamNeues Teammitglied</option>
+<option value="Allgemein">📌 Allgemein</option>
+</select>
+<textarea id="news-text" placeholder="Inhalt..." rows="3"></textarea>
+<button class="btn-action" onclick="addNews()">Zur Liste hinzufügen</button>
+<table class="data-table" style="margin-top: 20px;">
+<thead><tr><th>Titel &amp; Kategorie</th><th>Datum</th><th>Aktion</th></tr></thead>
+<tbody id="news-table-body"></tbody>
+</table>
+<button class="btn-save" onclick="saveNewsChanges()"><i class="fas fa-save"></i> News veröffentlichen</button>
+</div>
+<div class="card" id="card-gallery">
+<h2><i class="fas fa-images"></i> Galerie Verwaltung</h2>
+<input id="gallery-img-url-fallback" placeholder="Bild URL / Dateiname (z.B. spawn.jpg)" type="text"/>
+<input id="gallery-img-title" placeholder="Bild-Beschreibung / Titel" type="text"/>
+<button class="btn-action" onclick="addGalleryImage()">Bild hinzufügen</button>
+<table class="data-table" style="margin-top: 20px;">
+<thead><tr><th>Quelle</th><th>Titel</th><th>Aktionen</th></tr></thead>
+<tbody id="gallery-table-body"></tbody>
+</table>
+<button class="btn-save" onclick="saveGalleryChanges()"><i class="fas fa-save"></i> Galerie speichern</button>
+</div>
+<div class="card" id="card-arena">
+<div class="card-head">
+<div>
+<div class="eyebrow">Minecraft Ressourcen</div>
+<h2><i class="fas fa-cubes"></i> Arena Dateien</h2>
+<p class="subtext">PNG Dateien und zugehörige PNG.MCMETA Dateien direkt im Arena Ordner verwalten.</p>
+</div>
+<button class="btn-action" onclick="loadArenaFiles()" type="button"><i class="fas fa-rotate"></i> Aktualisieren</button>
+</div>
+<div class="arena-upload-box">
+<div class="arena-upload-grid">
+<label class="arena-file-label">
+<span>PNG Datei</span>
+<input accept=".png,image/png" id="arena-png-file" type="file"/>
+</label>
+<label class="arena-file-label">
+<span>PNG.MCMETA Datei</span>
+<input accept=".mcmeta,.png.mcmeta,application/json,text/plain" id="arena-mcmeta-file" type="file"/>
+</label>
+</div>
+<div class="arena-upload-actions">
+<button class="btn-save" onclick="uploadArenaFiles()" type="button"><i class="fas fa-upload"></i> Arena Dateien hochladen</button>
+<span aria-live="polite" class="muted" id="arena-upload-status"></span>
+</div>
+<p class="subtext arena-help">Die Dateien werden im Ordner <code>arena/</code> gespeichert. Eine MCMETA Datei muss gültiges JSON enthalten.</p>
+</div>
+<div class="arena-note">
+<strong>Wichtig</strong>
+<span>Eine PNG.MCMETA Datei bleibt mit ihrem vollständigen Namen erhalten, zum Beispiel <code>arena.png.mcmeta</code>.</span>
+</div>
+
+<div class="arena-ban-panel">
+<h3><i class="fas fa-user-shield"></i> Nutzer und IP-Sperren</h3>
+<p class="subtext">Nur für den Owner. Gesperrte Nutzer können sich nicht mehr anmelden. IP-Sperren blockieren die Admin-Anmeldung von dieser Adresse.</p>
+<div class="arena-upload-grid">
+<label class="arena-file-label">Nutzer sperren<input id="ban-user-input" maxlength="16" placeholder="Minecraft-Name" type="text"></label>
+<label class="arena-file-label">IP sperren<input id="ban-ip-input" maxlength="45" placeholder="z. B. 203.0.113.10" type="text"></label>
+</div>
+<div class="arena-upload-actions">
+<button class="btn-action" type="button" onclick="banUserAdmin()">Nutzer sperren</button>
+<button class="btn-action" type="button" onclick="banIpAdmin()">IP sperren</button>
+<button class="btn-action" type="button" onclick="loadBansAdmin()">Sperren aktualisieren</button>
+</div>
+<div id="ban-status" class="subtext" aria-live="polite"></div>
+<div class="ban-lists">
+<div><strong>Gesperrte Nutzer</strong><ul id="banned-users-list"></ul></div>
+<div><strong>Gesperrte IPs</strong><ul id="banned-ips-list"></ul></div>
+</div>
+</div>
+
+<table class="data-table arena-table">
+<thead><tr><th>Datei</th><th>Typ</th><th>Größe</th><th>Änderung</th><th>Aktion</th></tr></thead>
+<tbody id="arena-files-body"><tr><td class="muted" colspan="5">Dateien werden geladen.</td></tr></tbody>
+</table>
+</div>
+<div class="card" id="card-join">
+<h2><i class="fas fa-server"></i> Join &amp; Schritte Verwaltung</h2>
+<label style="font-size: 0.9rem; color: var(--secondary);">Server-IP:</label>
+<input id="config-ip" maxlength="253" type="text" value="kumpelsmp600.mcsh.io"/>
+<div style="margin-top:15px; padding:15px; border:1px solid rgba(255,255,255,.1); border-radius:12px;">
+<strong>Website-Hinweis</strong>
+<label style="display:block; margin-top:10px;"><input id="notice-enabled" type="checkbox"/> Hinweis öffentlich anzeigen</label>
+<select id="notice-type" style="margin-top:10px; width:100%;"><option value="info">Info</option><option value="success">Erfolg</option><option value="warning">Warnung</option><option value="danger">Wichtig</option></select>
+<input id="notice-title" maxlength="80" placeholder="Titel des Hinweises" style="margin-top:10px; width:100%; box-sizing:border-box;" type="text"/>
+<textarea id="notice-text" maxlength="500" placeholder="Hinweistext..." rows="2" style="margin-top:10px; width:100%; box-sizing:border-box;"></textarea>
+</div>
+<hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;"/>
+<input id="step-title-input" placeholder="Schritt Titel..." type="text"/>
+<textarea id="step-desc-input" placeholder="Beschreibung..." rows="2"></textarea>
+<button class="btn-action" onclick="addJoinStep()">Schritt hinzufügen</button>
+<table class="data-table">
+<thead><tr><th>Schritt Titel &amp; Beschreibung</th><th>Aktionen</th></tr></thead>
+<tbody id="steps-table-body"></tbody>
+</table>
+<button class="btn-save" onclick="saveJoinConfig()"><i class="fas fa-save"></i> Join-Config speichern</button>
+</div>
+<div class="card" id="card-chat">
+<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+<h2 style="margin:0;"><i class="fas fa-comments"></i> Team Chat (Live)</h2>
+<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;"><span id="chat-typing-indicator" style="font-size:0.8rem; color:#888; font-style:italic; min-height:1em;"></span><button class="btn-delete" onclick="clearTeamChat()" type="button">Chat leeren</button></div>
+</div>
+<div class="chat-container" id="chat-box"></div>
+<button id="chat-scroll-bottom" onclick="scrollChatToBottom(true)" style="display:none; margin: -8px auto 8px auto; background: rgba(0,114,206,0.3);  color: white; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; cursor: pointer;">
+<i class="fas fa-arrow-down"></i> Neue Nachrichten
+ </button>
+<div style="display: flex; gap: 10px; align-items: flex-end;">
+<div style="flex:1; position: relative;">
+<input id="chat-input" maxlength="1000" oninput="updateChatCharCount()" placeholder="Nachricht schreiben..." style="margin:0; width:100%; box-sizing:border-box; padding-right: 55px;" type="text"/>
+<span id="chat-char-count" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:0.7rem; color:#666; pointer-events:none;"></span>
+</div>
+<button class="btn-action" id="chat-send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+</div>
+</div>
+<div class="card" id="card-talk">
+<h2><i class="fas fa-headset"></i> Admin Voice Talk</h2>
+<p style="font-size: 0.85rem; color: #aaa; margin-bottom: 15px;">Live-Konferenz für alle Admins mit Kamera, Bildschirmfreigabe und Status-Indikatoren.</p>
+<div class="talk-room-layout">
+<div class="talk-main-stage">
+<div class="video-grid" id="video-container" style="display:none;"></div>
+<div id="talk-idle-view" style="text-align: center; color: #777;">
+<i class="fas fa-microphone-slash" style="font-size: 3rem; margin-bottom: 10px; color: #ff416c;"></i>
+<p>Du bist nicht im Talk verbunden.</p>
+<button class="btn-save" onclick="connectTalkRoom()" style="margin-top: 10px;"><i class="fas fa-phone"></i> Dem Talk beitreten</button>
+</div>
+</div>
+<div class="talk-sidebar-panel">
+<h4><i class="fas fa-users"></i> Im Talk (<span id="participant-count">0</span>)</h4>
+<ul class="participant-list" id="participant-list">
+<li style="color: #666; font-size: 0.8rem; text-align: center; padding: 20px 0;">Niemand im Talk</li>
+</ul>
+</div>
+</div>
+<div class="talk-controls-bar" id="talk-controls" style="display: none; position: relative;">
+<div class="ctrl-group">
+<button class="btn-talk-ctrl" id="ctrl-mic" onclick="toggleTalkMic()"><i class="fas fa-microphone"></i> Mikrofon</button>
+<button class="btn-talk-sub" onclick="toggleDeviceMenu('menu-mic')" title="Mikrofon Optionen"><i class="fas fa-chevron-up"></i></button>
+</div>
+<div class="ctrl-group">
+<button class="btn-talk-ctrl" id="ctrl-deafen" onclick="toggleTalkDeafen()"><i class="fas fa-headphones"></i> Voll Stumm</button>
+<button class="btn-talk-sub" onclick="toggleDeviceMenu('menu-output')" title="Ausgabegerät auswählen"><i class="fas fa-chevron-up"></i></button>
+</div>
+<div class="ctrl-group">
+<button class="btn-talk-ctrl" id="ctrl-cam" onclick="toggleTalkCam()"><i class="fas fa-video"></i> Kamera</button>
+<button class="btn-talk-sub" onclick="toggleDeviceMenu('menu-cam')" title="Kamera auswählen"><i class="fas fa-chevron-up"></i></button>
+</div>
+<div class="ctrl-group">
+<button class="btn-talk-ctrl" id="ctrl-screen" onclick="toggleTalkScreen()"><i class="fas fa-desktop"></i> Bildschirm</button>
+<button class="btn-talk-sub" onclick="toggleDeviceMenu('menu-screen')" title="Bildschirm Optionen"><i class="fas fa-chevron-up"></i></button>
+</div>
+<button class="btn-hangup" onclick="disconnectTalkRoom()"><i class="fas fa-phone-slash"></i> Auflegen</button>
+<div class="device-menu" id="menu-mic">
+<h5>Mikrofon wählen</h5>
+<select id="select-mic" onchange="changeAudioInput(this.value)"></select>
+<button class="btn-action" onclick="startMicTest()" style="width: 100%; font-size: 0.8rem; padding: 6px; margin-top: 4px;"><i class="fas fa-volume-up"></i> Mikrofontest</button>
+</div>
+<div class="device-menu" id="menu-output">
+<h5>Ausgabegerät wählen</h5>
+<select id="select-output" onchange="changeAudioOutput(this.value)"></select>
+</div>
+<div class="device-menu" id="menu-cam">
+<h5>Kamera wählen</h5>
+<select id="select-cam" onchange="changeVideoInput(this.value)"></select>
+</div>
+<div class="device-menu" id="menu-screen">
+<h5>Bildschirm Modus</h5>
+<select id="select-screen" onchange="hideAllDeviceMenus()">
+<option value="standard">Standard Freigabe</option>
+</select>
+</div>
+</div>
+</div>
+<div class="card" id="card-system">
+<div class="card-head"><div><div class="eyebrow">Werkzeuge</div><h2><i class="fas fa-sliders"></i> System &amp; Werkzeuge</h2><p class="subtext">Schnelle Wartungsfunktionen für den Admin-Bereich.</p></div></div>
+<div class="section-grid">
+<div class="quick" onclick="refreshAdminData()"><strong>Daten neu laden</strong><span>Aktuelle Daten vom Server abrufen.</span></div>
+<div class="quick" onclick="exportAdminData()"><strong>Konfiguration exportieren</strong><span>Aktuelle, bereinigte Admin-Daten als JSON speichern.</span></div>
+<div class="quick" onclick="copyCurrentServerIp()"><strong>Serveradresse kopieren</strong><span>Die konfigurierte Minecraft-Adresse in die Zwischenablage kopieren.</span></div>
+<div class="quick" onclick="switchTab('audit')"><strong>Protokoll prüfen</strong><span>Letzte Admin-Aktionen kontrollieren.</span></div>
+<div class="quick" onclick="switchTab('maintenance')"><strong>Wartungsmodus</strong><span>Website-Hinweis für Besucher aktivieren oder abschalten.</span></div>
+<div class="quick" onclick="clearTeamChat()"><strong>Team-Chat leeren</strong><span>Alle aktuellen Chat-Nachrichten entfernen. Nur Owner.</span></div>
+</div>
+<div class="notice-preview" style="margin-top:14px"><strong>Verbindung</strong><div class="muted" id="system-health" style="margin-top:4px">Bereit.</div></div>
+<div class="danger-zone" style="margin-top:14px"><strong>Wichtig</strong><p class="muted" style="margin:5px 0 0">Keine Funktion hier löscht automatisch deine Website-Daten. Für echte Backups sollte zusätzlich ein Server-Backup eingerichtet werden.</p></div>
+</div>
+<div class="card" id="card-maintenance">
+<div class="card-head">
+<div><div class="eyebrow">Website-Steuerung</div><h2><i class="fas fa-screwdriver-wrench"></i> Wartungsmodus</h2><p class="subtext">Zeige Besuchern eine klare Meldung, wenn die Website gerade bearbeitet wird.</p></div>
+<span class="status-pill" id="maintenance-status">Deaktiviert</span>
+</div>
+<div class="danger-zone" style="margin-bottom:14px;">
+<strong>Wichtig</strong>
+<p class="muted" style="margin:5px 0 0">Der Wartungsmodus sperrt keine Minecraft-Verbindungen. Er zeigt nur auf der Website einen Hinweis.</p>
+</div>
+<label style="display:flex;align-items:center;gap:9px;font-weight:700;margin:12px 0;">
+<input id="maintenance-enabled" type="checkbox" style="width:auto;margin:0;"/>
+ Wartungsmodus aktiv
+</label>
+<input id="maintenance-title" maxlength="80" placeholder="Titel, zum Beispiel Wartungsarbeiten" type="text"/>
+<textarea id="maintenance-text" maxlength="500" rows="4" placeholder="Meldung für Besucher"></textarea>
+<div class="notice-preview" id="maintenance-preview"><strong>Vorschau</strong><div class="muted" id="maintenance-preview-text" style="margin-top:5px">Wartungsmodus ist deaktiviert.</div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+<button class="btn-save" onclick="saveMaintenance()" type="button"><i class="fas fa-save"></i> Wartungsmodus speichern</button>
+<button class="btn-action" onclick="toggleMaintenancePreview()" type="button">Vorschau aktualisieren</button>
+</div>
+</div>
+<div class="card" id="card-audit">
+<div class="card-head"><div><h2><i class="fas fa-history"></i> Admin-Protokoll</h2><p class="subtext">Letzte Verwaltungsaktionen.</p></div><button class="btn-delete" onclick="clearAuditLog()" type="button">Protokoll leeren</button></div>
+<table class="data-table">
+<thead><tr><th>Uhrzeit</th><th>Admin</th><th>Aktion</th></tr></thead>
+<tbody id="audit-table-body"></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal" id="profile-modal">
+<div class="modal-content" style="max-height: 85vh; overflow-y: auto;">
+<span class="close-modal" onclick="closeProfile()">×</span>
+<div id="modal-avatar-container"></div>
+<h3 id="modal-display-name" style="color: var(--secondary); margin: 10px 0 5px 0;"></h3>
+<p id="modal-username" style="color: #aaa; font-size: 0.85rem; margin-bottom: 15px;"></p>
+<p id="modal-bio" style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; font-size: 0.9rem; text-align: left; word-break: break-word; color: #ddd; margin-bottom: 15px;"></p>
+<div id="modal-edit-section" style="display: none; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; text-align: left;">
+<h4 style="color: var(--gladbach); margin: 0 0 10px 0; font-size: 1rem;"><i class="fas fa-pen"></i> Profil bearbeiten</h4>
+<label style="font-size: 0.8rem; color: #aaa;">Anzeigename:</label>
+<input id="profile-display-name" maxlength="30" placeholder="Anzeigename..." style="margin: 5px 0 10px 0; padding: 8px;" type="text"/>
+<label style="font-size: 0.8rem; color: #aaa;">Statustext (z.B. "Baut gerade am Spawn"):</label>
+<input id="profile-status" maxlength="60" placeholder="Statustext..." style="margin: 5px 0 10px 0; padding: 8px;" type="text"/>
+<label style="font-size: 0.8rem; color: #aaa;">Kontakt (optional, z.B. Discord-Tag):</label>
+<input id="profile-contact" maxlength="50" placeholder="z.B. @NiklasSMP" style="margin: 5px 0 10px 0; padding: 8px;" type="text"/>
+<label style="font-size: 0.8rem; color: #aaa;">Profilbild auswählen:</label>
+<div style="display: flex; gap: 8px; align-items: center; margin: 5px 0 10px 0;">
+<input accept="image/*" id="profile-avatar-file" onchange="handleImageUpload(event)" style="flex: 1; padding: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,65,108,0.3); border-radius: 8px; color: white;" type="file"/>
+<button class="btn-action" onclick="resetAvatar()" style="white-space: nowrap;" title="Auf Standardbild zurücksetzen" type="button"><i class="fas fa-undo"></i></button>
+</div>
+<label style="font-size: 0.8rem; color: #aaa;">Beschreibung / Über mich:</label>
+<textarea id="profile-bio" maxlength="200" placeholder="Beschreibung..." rows="2" style="margin: 5px 0 10px 0; padding: 8px;"></textarea>
+<label style="display:flex; align-items:center; gap:8px; font-size: 0.85rem; color: #ccc; margin: 8px 0 15px 0; cursor: pointer;">
+<input id="profile-bio-public" style="width:auto;" type="checkbox"/>
+ Beschreibung für andere Nutzer sichtbar
+ </label>
+<button class="btn-save" onclick="saveMyProfile()" style="margin-top: 5px; width: 100%;">Profil-Änderungen speichern</button>
+<h4 style="color: var(--gladbach); margin: 25px 0 10px 0; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;"><i class="fas fa-palette"></i> Darstellung</h4>
+<label style="font-size: 0.8rem; color: #aaa;">Akzentfarbe für dein Namens-Badge:</label>
+<div id="badge-color-picker" style="display: flex; gap: 10px; margin: 8px 0 10px 0; flex-wrap: wrap;"></div>
+<div style="margin: 0 0 15px 0;">
+<label style="font-size: 0.75rem; color: #888; display:block; margin-bottom: 6px;">Vorschau:</label>
+<div class="top-profile-badge" id="badge-preview" style="display: inline-flex; position: static;">
+<img alt="Vorschau" class="top-profile-avatar" id="badge-preview-avatar" src=""/>
+<span class="top-profile-name" id="badge-preview-name"></span>
+</div>
+</div>
+<label style="display:flex; align-items:center; gap:8px; font-size: 0.85rem; color: #ccc; margin: 8px 0 15px 0; cursor: pointer;">
+<input id="profile-chat-sound" style="width:auto;" type="checkbox"/>
+ Sound bei neuen Chat-Nachrichten
+ </label>
+<p id="preferences-save-msg" style="font-size: 0.8rem; display: none; margin: 5px 0;"></p>
+<button class="btn-save" onclick="saveMyPreferences()" style="margin-top: 5px; width: 100%;" type="button">Darstellung speichern</button>
+<h4 style="color: var(--gladbach); margin: 25px 0 10px 0; font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;"><i class="fas fa-lock"></i> Passwort ändern</h4>
+<label style="font-size: 0.8rem; color: #aaa;">Aktuelles Passwort:</label>
+<input id="profile-current-pass" placeholder="Aktuelles Passwort..." style="margin: 5px 0 10px 0; padding: 8px;" type="password"/>
+<label style="font-size: 0.8rem; color: #aaa;">Neues Passwort (min. 8 Zeichen):</label>
+<input id="profile-new-pass" placeholder="Neues Passwort..." style="margin: 5px 0 10px 0; padding: 8px;" type="password"/>
+<label style="font-size: 0.8rem; color: #aaa;">Neues Passwort wiederholen:</label>
+<input id="profile-new-pass-confirm" placeholder="Neues Passwort wiederholen..." style="margin: 5px 0 10px 0; padding: 8px;" type="password"/>
+<p id="password-change-msg" style="font-size: 0.8rem; display: none; margin: 5px 0;"></p>
+<button class="btn-save" onclick="changeMyPassword()" style="margin-top: 5px; width: 100%; background: linear-gradient(45deg, #ff416c, #ff4b2b);">Passwort ändern</button>
+</div>
+</div>
+</div>
+<script>
+        const DEFAULT_GLADBACH_AVATAR = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/1200px-Borussia_M%C3%B6nchengladbach_logo.svg.png";
+
+        function escapeHtml(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function sanitizeImageUrl(url) {
+            if (!url) return DEFAULT_GLADBACH_AVATAR;
+            const trimmed = String(url).trim();
+            if (/^(https?:)?\/\//i.test(trimmed)) return escapeHtml(trimmed);
+            if (/^data:image\//i.test(trimmed)) return trimmed;
+            if (/^[a-zA-Z0-9_\-.\/]+$/.test(trimmed)) return escapeHtml(trimmed);
+            return DEFAULT_GLADBACH_AVATAR;
+        }
+        
+        let currentAnswer, num1, num2;
+        let loggedInUser = localStorage.getItem('smp_current_user') || '';
+        let tempAvatarBase64 = ""; 
+
+        let talkStream = null;
+        let selectedAudioInputId = null;
+        let selectedVideoInputId = null;
+        let selectedAudioOutputId = null;
+
+        let isTalkConnected = false;
+        let isTalkMuted = false;
+        let isTalkDeafened = false;
+        let isCamActive = false;
+        let isScreenSharing = false;
+        let isSpeaking = false;
+
+        let audioContext = null;
+        let analyser = null;
+        let microphone = null;
+        let javascriptNode = null;
+
+        let peerConnections = {};
+        let remoteStreams = {};
+        let signalPollTimer = null;
+        let talkParticipantsCache = {};
+        const ICE_SERVERS = [
+            { urls: 'stun:stun.l.google.com:19302' },
+            { urls: 'stun:stun1.l.google.com:19302' }
+        ];
+
+        let unreadChatCount = 0;
+        let lastKnownChatLength = 0;
+        let unreadAuditCount = 0;
+        let lastKnownAuditLength = 0;
+
+        let globalData = {
+            keys: [{ code: "SMP-KEY-1882", creator: "Niklas1882", status: "Aktiv" }],
+            team: [{ name: "Niklas1882", role: "Owner" }],
+            users: [{ username: "Niklas1882", displayName: "Niklas1882", avatar: DEFAULT_GLADBACH_AVATAR, bio: "Projektinhaber von Kumpel SMP 600.", permissions: { keys: true, team: true, news: true, rankDelete: true } }],
+            news: [{ title: "Server Start", category: "Update", text: "Online!", date: "21.08.2026" }],
+            gallery: [],
+            serverIp: "kumpelsmp600.mcsh.io",
+            joinSteps: [],
+            auditLogs: [],
+            activeTalkUsers: [],
+            maintenance: { enabled:false, title:'Wartungsarbeiten', text:'Die Website wird gerade aktualisiert. Bitte später erneut versuchen.' }
+        };
+
+        function generateCaptcha() {
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * 10) + 1;
+            currentAnswer = num1 + num2;
+            document.getElementById('captcha-label').innerText = `Rechenaufgabe: ${num1} + ${num2} = ?`;
+        }
+
+        window.onload = function() {
+            loadFromHoster();
+            setInterval(() => {
+                loadFromHosterSilent();
+                loadChatOnly();
+                pollTypingIndicator();
+            }, 3000);
+            generateCaptcha();
+
+            const chatInput = document.getElementById('chat-input');
+            if (chatInput) {
+                chatInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendChatMessage();
+                    }
+                });
+            }
+        };
+
+        window.addEventListener('beforeunload', function() {
+            if (isTalkConnected) {
+                navigator.sendBeacon('api.php?action=talk_leave');
+            }
+        });
+
+        function loadFromHoster() {
+            fetch('api.php?action=get_main', { credentials: 'same-origin' })
+                .then(res => res.json())
+                .then(data => {
+                    updateDataFromPayload(data);
+                    if (data && data.loggedIn) {
+                        loggedInUser = data.currentUser || loggedInUser;
+                        showDashboard();
+                        renderAll();
+                    } else {
+                        loggedInUser = '';
+                        localStorage.removeItem('smp_current_user');
+                        showLoginScreen();
+                    }
+                }).catch(e => console.log('Ladefehler'));
+            loadChatOnly();
+        }
+
+        function loadFromHosterSilent() {
+            fetch('api.php?action=get_main', { credentials: 'same-origin' })
+                .then(res => res.json())
+                .then(data => {
+                    if (data && !data.loggedIn && document.getElementById('dashboard-section').style.display === 'block') {
+                        showLoginScreen();
+                        return;
+                    }
+                    if (data) {
+                        let prevAuditLen = (globalData.auditLogs || []).length;
+                        globalData.auditLogs = data.auditLogs || [];
+                        
+                        if (globalData.auditLogs.length > prevAuditLen) {
+                            let currentActiveTab = document.querySelector('.card.active')?.id;
+                            if (currentActiveTab !== 'card-audit') {
+                                unreadAuditCount += (globalData.auditLogs.length - prevAuditLen);
+                                updateAuditBadge();
+                            }
+                        }
+                        renderAuditLog();
+                    }
+                }).catch(e => {});
+        }
+
+        function updateDataFromPayload(data) {
+            if (data) { 
+                let prevAuditLen = (globalData.auditLogs || []).length;
+                const preservedActiveTalkUsers = globalData.activeTalkUsers || [];
+                globalData = {
+                    keys: data.keys || [{ code: "SMP-KEY-1882", creator: "Niklas1882", status: "Aktiv" }],
+                    team: data.team || [{ name: "Niklas1882", role: "Owner" }],
+                    users: data.users || [{ username: "Niklas1882", avatar: DEFAULT_GLADBACH_AVATAR, permissions: { keys: true, team: true, news: true, rankDelete: true } }],
+                    news: data.news || [{ title: "Server Start", category: "Update", text: "Online!", date: "21.08.2026" }],
+                    gallery: data.gallery || [],
+                    serverIp: data.serverIp || "kumpelsmp600.mcsh.io",
+                    joinSteps: data.joinSteps || [],
+                    auditLogs: data.auditLogs || [],
+                    activeTalkUsers: preservedActiveTalkUsers,
+                    siteNotice: data.siteNotice || { enabled:false, type:'info', title:'', text:'' },
+                    maintenance: data.maintenance || { enabled:false, title:'Wartungsarbeiten', text:'Die Website wird gerade aktualisiert. Bitte später erneut versuchen.' }
+                };
+                if (globalData.auditLogs.length > prevAuditLen) {
+                    let currentActiveTab = document.querySelector('.card.active')?.id;
+                    if (currentActiveTab !== 'card-audit') {
+                        unreadAuditCount += (globalData.auditLogs.length - prevAuditLen);
+                        updateAuditBadge();
+                    }
+                }
+            }
+        }
+
+        function saveToHoster(options) {
+            const promise = fetch('api.php?action=save_main', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json', 'X-Admin-Action': (options && options.action) || 'Daten aktualisiert' },
+                body: JSON.stringify(globalData)
+            }).then(async res => {
+                const raw = await res.text();
+                let body = {};
+                try { body = raw ? JSON.parse(raw) : {}; } catch (_) { throw new Error('Die API hat keine gültige JSON-Antwort geliefert.'); }
+                if (res.status === 401) {
+                    loggedInUser = '';
+                    localStorage.removeItem('smp_current_user');
+                    showLoginScreen();
+                    throw new Error('Sitzung abgelaufen.');
+                }
+                if (!res.ok || body.status !== 'success') throw new Error(body.message || 'Speichern fehlgeschlagen.');
+                return body;
+            });
+
+            if (!options || !options.handleErrors) {
+                promise.catch(err => {
+                    console.log("Speicherfehler:", err);
+                    if (err.message !== 'unauthorized') {
+                        alert("⚠️ Änderungen konnten nicht gespeichert werden: " + (err.message || 'Netzwerkfehler') + "\nBitte erneut versuchen.");
+                    }
+                });
+                return promise;
+            }
+            return promise;
+        }
+
+        function loadChatOnly() {
+            fetch('api.php?action=get_chat', {cache:'no-store', credentials:'same-origin'})
+                .then(async res => {
+                    const raw = await res.text();
+                    let messages; try { messages = raw ? JSON.parse(raw) : []; } catch (_) { throw new Error('Ungültige Chatantwort.'); }
+                    if (!res.ok || !Array.isArray(messages)) throw new Error('Chat konnte nicht geladen werden.');
+                    return messages;
+                })
+                .then(messages => { 
+                    if (Array.isArray(messages)) {
+                        let currentActiveTab = document.querySelector('.card.active')?.id;
+                        if (messages.length > lastKnownChatLength) {
+                            if (lastKnownChatLength > 0) playChatSoundIfEnabled();
+                            if (currentActiveTab !== 'card-chat') {
+                                unreadChatCount += (messages.length - lastKnownChatLength);
+                                updateChatBadge();
+                            }
+                            lastKnownChatLength = messages.length;
+                        }
+                        renderChat(messages); 
+                    }
+                }).catch(e => {});
+        }
+
+        function playChatSoundIfEnabled() {
+            let u = (globalData.users || []).find(user => user.username === loggedInUser);
+            if (!u || u.chatSound === false) return;
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(880, ctx.currentTime);
+                gain.gain.setValueAtTime(0.08, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+                osc.connect(gain).connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.25);
+            } catch (e) {}
+        }
+
+        function updateChatBadge() {
+            const badge = document.getElementById('chat-badge');
+            if (!badge) return;
+            if (unreadChatCount > 0) {
+                badge.innerText = unreadChatCount;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        function updateAuditBadge() {
+            const badge = document.getElementById('audit-badge');
+            if (!badge) return;
+            if (unreadAuditCount > 0) {
+                badge.innerText = unreadAuditCount;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        function logAction(actionText) {
+            const time = new Date().toLocaleString('de-DE');
+            if(!globalData.auditLogs) globalData.auditLogs = [];
+            globalData.auditLogs.unshift({ time, user: loggedInUser, action: actionText });
+            if(globalData.auditLogs.length > 50) globalData.auditLogs.pop();
+            saveToHoster();
+        }
+
+        function checkPermission(permType) {
+            if (loggedInUser === "Niklas1882") return true;
+            let userObj = globalData.users.find(u => u.username === loggedInUser);
+            if (userObj && userObj.permissions && userObj.permissions[permType] === true) return true;
+            alert("❌ Keine Berechtigung für diese Aktion!");
+            return false;
+        }
+
+        function switchView(view) {
+            document.getElementById('login-section').style.display = view === 'login' ? 'block' : 'none';
+            document.getElementById('register-section').style.display = view === 'register' ? 'block' : 'none';
+        }
+
+
+        async function loadArenaFiles() {
+            const body = document.getElementById('arena-files-body');
+            if (!body) return;
+            body.innerHTML = '<tr><td colspan="5" class="muted">Dateien werden geladen ...</td></tr>';
+            try {
+                const res = await fetch('api.php?action=arena_list', { credentials: 'same-origin', cache: 'no-store' });
+                const data = await res.json();
+                if (!res.ok || data.status !== 'success') throw new Error(data.message || 'Laden fehlgeschlagen');
+                renderArenaFiles(data.files || []);
+            } catch (err) {
+                body.innerHTML = `<tr><td colspan="5" class="muted">${escapeHtml(err.message || 'Arena Dateien konnten nicht geladen werden.')}</td></tr>`;
+            }
+        }
+
+        function renderArenaFiles(files) {
+            const body = document.getElementById('arena-files-body');
+            if (!body) return;
+            if (!files.length) {
+                body.innerHTML = '<tr><td colspan="5" class="muted">Noch keine Arena Dateien vorhanden.</td></tr>';
+                return;
+            }
+            body.innerHTML = files.map(file => {
+                const type = file.type === 'mcmeta' ? 'PNG.MCMETA' : 'PNG';
+                return `<tr>
+                    <td><code>${escapeHtml(file.name)}</code></td>
+                    <td><span class="arena-type">${type}</span></td>
+                    <td>${escapeHtml(file.sizeHuman)}</td>
+                    <td>${escapeHtml(file.modified)}</td>
+                    <td><button class="btn-delete arena-delete" type="button" onclick="deleteArenaFile(${JSON.stringify(file.name)})"><i class="fas fa-trash"></i> Löschen</button></td>
+                </tr>`;
+            }).join('');
+        }
+
+        async function uploadArenaFiles() {
+            if (!checkPermission('config')) return;
+            const png = document.getElementById('arena-png-file')?.files?.[0] || null;
+            const mcmeta = document.getElementById('arena-mcmeta-file')?.files?.[0] || null;
+            const status = document.getElementById('arena-upload-status');
+            if (!png && !mcmeta) {
+                if (status) status.textContent = 'Bitte mindestens eine Datei auswählen.';
+                return;
+            }
+            const form = new FormData();
+            if (png) form.append('png', png);
+            if (mcmeta) form.append('mcmeta', mcmeta);
+            if (status) status.textContent = 'Upload läuft ...';
+            try {
+                const res = await fetch('api.php?action=arena_upload', {
+                    method: 'POST', credentials: 'same-origin', body: form,
+                    headers: { 'X-Admin-Action': 'Arena Datei hochgeladen' }
+                });
+                const data = await res.json();
+                if (!res.ok || data.status !== 'success') throw new Error(data.message || 'Upload fehlgeschlagen');
+                if (status) status.textContent = data.message || 'Upload erfolgreich.';
+                const p = document.getElementById('arena-png-file');
+                const m = document.getElementById('arena-mcmeta-file');
+                if (p) p.value = '';
+                if (m) m.value = '';
+                await loadArenaFiles();
+            } catch (err) {
+                if (status) status.textContent = err.message || 'Upload fehlgeschlagen.';
+            }
+        }
+
+        async function deleteArenaFile(name) {
+            if (!checkPermission('config')) return;
+            if (!confirm(`Datei "${name}" wirklich löschen?`)) return;
+            try {
+                const res = await fetch('api.php?action=arena_delete', {
+                    method: 'POST', credentials: 'same-origin',
+                    headers: { 'Content-Type': 'application/json', 'X-Admin-Action': 'Arena Datei gelöscht' },
+                    body: JSON.stringify({ name })
+                });
+                const data = await res.json();
+                if (!res.ok || data.status !== 'success') throw new Error(data.message || 'Löschen fehlgeschlagen');
+                await loadArenaFiles();
+            } catch (err) {
+                alert(err.message || 'Datei konnte nicht gelöscht werden.');
+            }
+        }
+
+        async function loadBansAdmin() {
+    const status = document.getElementById('ban-status');
+    try {
+        const res = await fetch('api.php?action=get_bans', {credentials:'same-origin', cache:'no-store'});
+        const body = await res.json();
+        if (!res.ok || body.status !== 'success') throw new Error(body.message || 'Sperrliste konnte nicht geladen werden.');
+        const users = document.getElementById('banned-users-list');
+        const ips = document.getElementById('banned-ips-list');
+        users.innerHTML = (body.users || []).length ? body.users.map(v => `<li><span>${escapeHtml(v)}</span><button class="btn-delete ban-remove" type="button" onclick="unbanAdmin('user',${JSON.stringify(v)})">Aufheben</button></li>`).join('') : '<li>Keine Nutzersperren</li>';
+        ips.innerHTML = (body.ips || []).length ? body.ips.map(v => `<li><span>${escapeHtml(v)}</span><button class="btn-delete ban-remove" type="button" onclick="unbanAdmin('ip',${JSON.stringify(v)})">Aufheben</button></li>`).join('') : '<li>Keine IP-Sperren</li>';
+        if(status) status.textContent = '';
+    } catch (e) { if(status) status.textContent = e.message || 'Sperrliste konnte nicht geladen werden.'; }
+}
+
+async function banRequest(action, value) {
+    const status = document.getElementById('ban-status');
+    try {
+        const res = await fetch('api.php?action='+encodeURIComponent(action), {method:'POST', credentials:'same-origin', headers:{'Content-Type':'application/json','X-Admin-Action':'Sperrverwaltung'}, body:JSON.stringify({value})});
+        const text = await res.text();
+        let body; try { body = JSON.parse(text); } catch (_) { throw new Error('Serverfehler: keine gültige JSON-Antwort erhalten.'); }
+        if(!res.ok || body.status !== 'success') throw new Error(body.message || 'Aktion fehlgeschlagen.');
+        if(status) status.textContent = body.message || 'Gespeichert.';
+        await loadBansAdmin();
+    } catch(e) { if(status) status.textContent = e.message || 'Netzwerkfehler.'; }
+}
+function banUserAdmin(){ const el=document.getElementById('ban-user-input'); const v=el?.value.trim(); if(!v) return; banRequest('ban_user',v).then(()=>{if(el)el.value='';}); }
+function banIpAdmin(){ const el=document.getElementById('ban-ip-input'); const v=el?.value.trim(); if(!v) return; banRequest('ban_ip',v).then(()=>{if(el)el.value='';}); }
+function unbanAdmin(type,value){ if(!confirm('Sperre wirklich aufheben?')) return; banRequest(type==='user'?'unban_user':'unban_ip',value); }
+
+        function switchTab(tabName, btn) {
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+            document.getElementById('card-' + tabName).classList.add('active');
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+            
+            if(tabName === 'permissions') renderPermissions();
+            if(tabName === 'chat') {
+                unreadChatCount = 0;
+                updateChatBadge();
+            }
+            if(tabName === 'audit') {
+                unreadAuditCount = 0;
+                updateAuditBadge();
+            }
+            if(tabName === 'arena') { loadArenaFiles(); loadBansAdmin(); }
+        }
+
+        function validateLogin() {
+            const user = document.getElementById('login-user').value.trim();
+            const pass = document.getElementById('login-pass').value;
+            const captcha = parseInt(document.getElementById('captcha-input').value);
+
+            if (captcha !== currentAnswer) {
+                document.getElementById('login-error').innerText = "Falsche Captcha-Antwort!";
+                document.getElementById('login-error').style.display = 'block';
+                generateCaptcha();
+                document.getElementById('captcha-input').value = '';
+                return;
+            }
+
+            fetch('api.php?action=login', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: user, password: pass })
+            })
+            .then(async res => {
+                const raw = await res.text();
+                let body;
+                try { body = JSON.parse(raw); } catch (_) { throw new Error('Serverfehler: Die API hat keine gültige Antwort geliefert.'); }
+                return { ok: res.ok, body };
+            })
+            .then(({ ok, body }) => {
+                if (ok && body.status === 'success') {
+                    loggedInUser = body.username;
+                    localStorage.setItem('smp_current_user', loggedInUser);
+                    document.getElementById('login-error').style.display = 'none';
+                    loadFromHoster();
+                    logAction("Eingeloggt");
+                } else {
+                    document.getElementById('login-error').innerText = body.message || "Falsche Daten oder Captcha!";
+                    document.getElementById('login-error').style.display = 'block';
+                    generateCaptcha();
+                    document.getElementById('captcha-input').value = '';
+                }
+            })
+            .catch(() => {
+                document.getElementById('login-error').innerText = "Netzwerkfehler, bitte erneut versuchen.";
+                document.getElementById('login-error').style.display = 'block';
+            });
+        }
+
+        function validateRegister() {
+            const keyInput = document.getElementById('reg-key').value.trim();
+            const user = document.getElementById('reg-user').value.trim();
+            const pass = document.getElementById('reg-pass').value;
+            const errBox = document.getElementById('reg-error');
+
+            if(!keyInput || !user || !pass) { errBox.innerText = "Alle Felder ausfüllen!"; errBox.style.display = 'block'; return; }
+            if(pass.length < 8) { errBox.innerText = "Passwort muss mindestens 8 Zeichen haben."; errBox.style.display = 'block'; return; }
+
+            fetch('api.php?action=register', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ key: keyInput, username: user, password: pass })
+            })
+            .then(async res => {
+                const raw = await res.text();
+                let body = {};
+                try { body = raw ? JSON.parse(raw) : {}; } catch (_) { throw new Error('Ungültige Serverantwort.'); }
+                return { ok: res.ok, body };
+            })
+            .then(({ ok, body }) => {
+                if (ok && body.status === 'success') {
+                    errBox.style.display = 'none';
+                    alert("Registrierung erfolgreich!");
+                    loadFromHoster();
+                    switchView('login');
+                } else {
+                    errBox.innerText = body.message || "Registrierung fehlgeschlagen.";
+                    errBox.style.display = 'block';
+                }
+            })
+            .catch(() => { errBox.innerText = "Netzwerkfehler, bitte erneut versuchen."; errBox.style.display = 'block'; });
+        }
+
+        function showDashboard() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('register-section').style.display = 'none';
+            document.getElementById('dashboard-section').style.display = 'block';
+            document.getElementById('top-profile-trigger').style.display = 'flex';
+            updateTopBadge();
+        }
+
+        function showLoginScreen() {
+            document.getElementById('dashboard-section').style.display = 'none';
+            document.getElementById('register-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'block';
+            document.getElementById('top-profile-trigger').style.display = 'none';
+        }
+
+        function logout() {
+            disconnectTalkRoom();
+            logAction("Ausgeloggt");
+            fetch('api.php?action=logout', { method: 'POST', credentials: 'same-origin' })
+                .finally(() => location.reload());
+        }
+
+        function renderAll() {
+            renderKeys(); renderTeamTable(); renderNewsTable(); renderGalleryTable(); renderStepsTable(); renderAuditLog(); renderMaintenance(); setupNewsDraft();
+            document.getElementById('config-ip').value = globalData.serverIp || '';
+            const notice = globalData.siteNotice || {};
+            const en = document.getElementById('notice-enabled');
+            const ty = document.getElementById('notice-type');
+            const ti = document.getElementById('notice-title');
+            const tx = document.getElementById('notice-text');
+            if (en) en.checked = !!notice.enabled;
+            if (ty) ty.value = notice.type || 'info';
+            if (ti) ti.value = notice.title || '';
+            if (tx) tx.value = notice.text || '';
+            updateTopBadge();
+        }
+
+        function updateTopBadge() {
+            let u = (globalData.users || []).find(user => user.username === loggedInUser);
+            if (u) {
+                document.getElementById('nav-badge-name').innerText = u.displayName || u.username;
+                document.getElementById('nav-badge-avatar').src = sanitizeImageUrl(u.avatar);
+                const trigger = document.getElementById('top-profile-trigger');
+                const allowedColors = BADGE_COLORS.map(c => c.value);
+                const color = allowedColors.includes(u.badgeColor) ? u.badgeColor : '#0072CE';
+                trigger.style.background = `${color}33`;
+                trigger.style.borderColor = color;
+            }
+        }
+
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Bitte nur Bilddateien auswählen.');
+                    event.target.value = '';
+                    return;
+                }
+                const MAX_SIZE = 2 * 1024 * 1024;
+                if (file.size > MAX_SIZE) {
+                    alert('Bild ist zu groß (max. 2 MB). Bitte kleineres Bild wählen.');
+                    event.target.value = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    tempAvatarBase64 = e.target.result;
+                    document.querySelector('#modal-avatar-container img').src = tempAvatarBase64;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        const BADGE_COLORS = [
+            { name: 'Standard', value: '#0072CE' },
+            { name: 'Pink', value: '#ff416c' },
+            { name: 'Lila', value: '#a29bfe' },
+            { name: 'Grün', value: '#25D366' },
+            { name: 'Gold', value: '#f1c40f' },
+            { name: 'Cyan', value: '#25F4EE' }
+        ];
+
+        function updateBadgePreview(color) {
+            let u = (globalData.users || []).find(user => user.username === loggedInUser);
+            const previewEl = document.getElementById('badge-preview');
+            const previewAvatar = document.getElementById('badge-preview-avatar');
+            const previewName = document.getElementById('badge-preview-name');
+            if (!previewEl || !u) return;
+            previewAvatar.src = sanitizeImageUrl(tempAvatarBase64 || u.avatar);
+            previewName.innerText = document.getElementById('profile-display-name').value.trim() || u.username;
+            previewEl.style.background = `${color}33`;
+            previewEl.style.borderColor = color;
+        }
+
+        function renderBadgeColorPicker(selected) {
+            const container = document.getElementById('badge-color-picker');
+            container.innerHTML = '';
+            const initial = selected || BADGE_COLORS[0].value;
+            BADGE_COLORS.forEach(c => {
+                const swatch = document.createElement('div');
+                swatch.title = c.name;
+                swatch.dataset.color = c.value;
+                const isSelected = initial === c.value;
+                swatch.style.cssText = `width: 30px; height: 30px; border-radius: 50%; background: ${c.value}; cursor: pointer; border: 3px solid ${isSelected ? '#fff' : 'transparent'}; box-shadow: 0 2px 6px rgba(0,0,0,0.4); transition: 0.2s;`;
+                swatch.onclick = () => {
+                    container.querySelectorAll('div').forEach(s => s.style.borderColor = 'transparent');
+                    swatch.style.borderColor = '#fff';
+                    container.dataset.selectedColor = c.value;
+                    updateBadgePreview(c.value);
+                };
+                container.appendChild(swatch);
+            });
+            container.dataset.selectedColor = initial;
+            updateBadgePreview(initial);
+        }
+
+        function openMyProfileModal() {
+            let u = (globalData.users || []).find(user => user.username === loggedInUser);
+            if (!u) return;
+            tempAvatarBase64 = u.avatar || DEFAULT_GLADBACH_AVATAR;
+            document.getElementById('modal-avatar-container').innerHTML = `<img src="${sanitizeImageUrl(tempAvatarBase64)}" class="profile-avatar" alt="Avatar">`;
+            document.getElementById('modal-display-name').innerText = u.displayName || loggedInUser;
+            document.getElementById('modal-username').innerText = `Benutzername: @${loggedInUser}`;
+            document.getElementById('modal-bio').innerText = u.bio || '';
+            document.getElementById('profile-display-name').value = u.displayName || loggedInUser;
+            document.getElementById('profile-status').value = u.status || '';
+            document.getElementById('profile-contact').value = u.contact || '';
+            document.getElementById('profile-bio').value = u.bio || '';
+            document.getElementById('profile-bio-public').checked = u.bioPublic !== false;
+            document.getElementById('profile-chat-sound').checked = u.chatSound !== false;
+            renderBadgeColorPicker(u.badgeColor || BADGE_COLORS[0].value);
+            document.getElementById('profile-current-pass').value = '';
+            document.getElementById('profile-new-pass').value = '';
+            document.getElementById('profile-new-pass-confirm').value = '';
+            document.getElementById('password-change-msg').style.display = 'none';
+            document.getElementById('modal-edit-section').style.display = 'block';
+            document.getElementById('profile-modal').style.display = 'flex';
+        }
+
+        function resetAvatar() {
+            tempAvatarBase64 = DEFAULT_GLADBACH_AVATAR;
+            document.getElementById('modal-avatar-container').innerHTML = `<img src="${sanitizeImageUrl(tempAvatarBase64)}" class="profile-avatar" alt="Avatar">`;
+            document.getElementById('profile-avatar-file').value = '';
+        }
+
+        function openProfile(username) {
+            let u = (globalData.users || []).find(user => user.username === username);
+            let displayName = u && u.displayName ? u.displayName : username;
+            document.getElementById('modal-avatar-container').innerHTML = `<img src="${sanitizeImageUrl(u?.avatar)}" class="profile-avatar" alt="Avatar">`;
+            document.getElementById('modal-display-name').innerText = displayName;
+            let statusLine = `Benutzername: @${username}`;
+            if (u?.status) statusLine += `  ${u.status}`;
+            document.getElementById('modal-username').innerText = statusLine;
+            const bioEl = document.getElementById('modal-bio');
+            if (u?.bioPublic === false) {
+                bioEl.innerText = "Dieser Nutzer hat seine Beschreibung privat gestellt.";
+            } else {
+                bioEl.innerText = u?.bio || "Keine Beschreibung.";
+            }
+            if (u?.contact) {
+                bioEl.innerText += `\n\nKontakt: ${u.contact}`;
+            }
+            document.getElementById('modal-edit-section').style.display = 'none';
+            document.getElementById('profile-modal').style.display = 'flex';
+        }
+
+        function saveMyProfile() {
+            let u = (globalData.users || []).find(user => user.username === loggedInUser);
+            if (u) {
+                u.displayName = document.getElementById('profile-display-name').value.trim().slice(0, 30) || u.username;
+                u.status = document.getElementById('profile-status').value.trim().slice(0, 60);
+                u.contact = document.getElementById('profile-contact').value.trim().slice(0, 50);
+                if (tempAvatarBase64) u.avatar = tempAvatarBase64;
+                u.bio = document.getElementById('profile-bio').value.trim().slice(0, 200);
+                u.bioPublic = document.getElementById('profile-bio-public').checked;
+                saveToHoster({ handleErrors: true })
+                    .then(() => {
+                        updateTopBadge();
+                        alert("✅ Profil gespeichert!");
+                        closeProfile();
+                    })
+                    .catch(err => {
+                        alert("❌ Profil konnte nicht gespeichert werden: " + (err.message || 'Netzwerkfehler'));
+                    });
+            }
+        }
+
+        function saveMyPreferences() {
+            let u = (globalData.users || []).find(user => user.username === loggedInUser);
+            const msgEl = document.getElementById('preferences-save-msg');
+            if (!u) return;
+
+            const picker = document.getElementById('badge-color-picker');
+            const chosenColor = picker.dataset.selectedColor || BADGE_COLORS[0].value;
+            u.badgeColor = chosenColor;
+            u.chatSound = document.getElementById('profile-chat-sound').checked;
+
+            msgEl.style.display = 'block';
+            msgEl.style.color = '#aaa';
+            msgEl.innerText = 'Speichere...';
+
+            saveToHoster({ handleErrors: true })
+                .then(() => {
+                    updateTopBadge();
+                    msgEl.style.color = '#25D366';
+                    msgEl.innerText = '✅ Darstellung gespeichert!';
+                })
+                .catch(err => {
+                    msgEl.style.color = '#ff416c';
+                    msgEl.innerText = '❌ Konnte nicht gespeichert werden: ' + (err.message || 'Netzwerkfehler');
+                });
+        }
+
+        function changeMyPassword() {
+            const current = document.getElementById('profile-current-pass').value;
+            const newPass = document.getElementById('profile-new-pass').value;
+            const confirmPass = document.getElementById('profile-new-pass-confirm').value;
+            const msgEl = document.getElementById('password-change-msg');
+
+            function showMsg(text, ok) {
+                msgEl.innerText = text;
+                msgEl.style.color = ok ? '#25D366' : '#ff416c';
+                msgEl.style.display = 'block';
+            }
+
+            if (!current || !newPass || !confirmPass) {
+                showMsg('Bitte alle Passwortfelder ausfüllen.', false);
+                return;
+            }
+            if (newPass.length < 8) {
+                showMsg('Neues Passwort muss mindestens 8 Zeichen haben.', false);
+                return;
+            }
+            if (newPass !== confirmPass) {
+                showMsg('Die neuen Passwörter stimmen nicht überein.', false);
+                return;
+            }
+
+            fetch('api.php?action=change_password', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ currentPassword: current, newPassword: newPass })
+            })
+            .then(res => res.json().then(body => ({ ok: res.ok, body })))
+            .then(({ ok, body }) => {
+                if (ok && body.status === 'success') {
+                    showMsg('✅ Passwort erfolgreich geändert!', true);
+                    document.getElementById('profile-current-pass').value = '';
+                    document.getElementById('profile-new-pass').value = '';
+                    document.getElementById('profile-new-pass-confirm').value = '';
+                    logAction('Passwort geändert');
+                } else {
+                    showMsg(body.message || 'Passwort konnte nicht geändert werden.', false);
+                }
+            })
+            .catch(() => showMsg('Netzwerkfehler, bitte erneut versuchen.', false));
+        }
+
+        function closeProfile() { document.getElementById('profile-modal').style.display = 'none'; }
+
+
+        function createPeerConnection(remoteUsername) {
+            if (peerConnections[remoteUsername]) return peerConnections[remoteUsername];
+
+            const pc = new RTCPeerConnection({ iceServers: ICE_SERVERS });
+
+            if (talkStream) {
+                talkStream.getTracks().forEach(track => pc.addTrack(track, talkStream));
+            }
+
+            pc.onicecandidate = (event) => {
+                if (event.candidate) {
+                    sendSignal(remoteUsername, 'ice-candidate', event.candidate.toJSON());
+                }
+            };
+
+            pc.ontrack = (event) => {
+                if (!remoteStreams[remoteUsername]) {
+                    remoteStreams[remoteUsername] = new MediaStream();
+                }
+                remoteStreams[remoteUsername].addTrack(event.track);
+                attachRemoteStreamToDom(remoteUsername);
+            };
+
+            pc.onconnectionstatechange = () => {
+                if (isTalkConnected) renderVideoGrid();
+                if (['failed', 'closed', 'disconnected'].includes(pc.connectionState)) {
+                    if (pc.connectionState === 'failed' && talkParticipantsCache[remoteUsername]) {
+                        closePeerConnection(remoteUsername);
+                        setTimeout(() => initiateOfferTo(remoteUsername), 1000);
+                    }
+                }
+            };
+
+            peerConnections[remoteUsername] = pc;
+            return pc;
+        }
+
+        async function initiateOfferTo(remoteUsername) {
+            const pc = createPeerConnection(remoteUsername);
+            try {
+                const offer = await pc.createOffer();
+                await pc.setLocalDescription(offer);
+                sendSignal(remoteUsername, 'offer', { sdp: pc.localDescription.sdp, type: pc.localDescription.type });
+            } catch (e) { console.log('Offer-Fehler zu', remoteUsername, e); }
+        }
+
+        async function handleIncomingOffer(fromUsername, payload) {
+            const pc = createPeerConnection(fromUsername);
+            try {
+                await pc.setRemoteDescription(new RTCSessionDescription(payload));
+                const answer = await pc.createAnswer();
+                await pc.setLocalDescription(answer);
+                sendSignal(fromUsername, 'answer', { sdp: pc.localDescription.sdp, type: pc.localDescription.type });
+            } catch (e) { console.log('Fehler beim Beantworten des Offers von', fromUsername, e); }
+        }
+
+        async function handleIncomingAnswer(fromUsername, payload) {
+            const pc = peerConnections[fromUsername];
+            if (!pc) return;
+            try {
+                await pc.setRemoteDescription(new RTCSessionDescription(payload));
+            } catch (e) { console.log('Fehler beim Setzen der Answer von', fromUsername, e); }
+        }
+
+        async function handleIncomingIceCandidate(fromUsername, payload) {
+            const pc = peerConnections[fromUsername];
+            if (!pc) return;
+            try {
+                await pc.addIceCandidate(new RTCIceCandidate(payload));
+            } catch (e) {  }
+        }
+
+        function closePeerConnection(remoteUsername) {
+            const pc = peerConnections[remoteUsername];
+            if (pc) {
+                pc.close();
+                delete peerConnections[remoteUsername];
+            }
+            delete remoteStreams[remoteUsername];
+            const audioEl = document.getElementById(`remote-audio-${cssSafeId(remoteUsername)}`);
+            if (audioEl) audioEl.remove();
+        }
+
+        function closeAllPeerConnections() {
+            Object.keys(peerConnections).forEach(closePeerConnection);
+            peerConnections = {};
+            remoteStreams = {};
+        }
+
+        function cssSafeId(username) {
+            return username.replace(/[^a-zA-Z0-9_-]/g, '_');
+        }
+
+        function attachRemoteStreamToDom(remoteUsername) {
+            const stream = remoteStreams[remoteUsername];
+            if (!stream) return;
+
+            let audioEl = document.getElementById(`remote-audio-${cssSafeId(remoteUsername)}`);
+            if (!audioEl) {
+                audioEl = document.createElement('audio');
+                audioEl.id = `remote-audio-${cssSafeId(remoteUsername)}`;
+                audioEl.autoplay = true;
+                audioEl.style.display = 'none';
+                document.body.appendChild(audioEl);
+            }
+            if (audioEl.srcObject !== stream) {
+                audioEl.srcObject = stream;
+                if (selectedAudioOutputId && typeof audioEl.setSinkId === 'function') {
+                    audioEl.setSinkId(selectedAudioOutputId).catch(() => {});
+                }
+            }
+            audioEl.muted = isTalkDeafened;
+
+            const remoteVideoEl = document.getElementById(`remote-video-${cssSafeId(remoteUsername)}`);
+            const videoTrack = stream.getVideoTracks()[0];
+            if (remoteVideoEl && videoTrack) {
+                if (remoteVideoEl.srcObject !== stream) remoteVideoEl.srcObject = stream;
+            }
+        }
+
+        async function broadcastVideoTrack(newTrack) {
+            for (const uname of Object.keys(peerConnections)) {
+                const pc = peerConnections[uname];
+                const sender = pc.getSenders().find(s => s.track && s.track.kind === 'video');
+                if (sender) {
+                    await sender.replaceTrack(newTrack).catch(() => {});
+                } else if (newTrack) {
+                    pc.addTrack(newTrack, talkStream);
+                    if (loggedInUser < uname) initiateOfferTo(uname);
+                }
+            }
+        }
+
+        async function removeVideoTrackFromPeers() {
+            for (const uname of Object.keys(peerConnections)) {
+                const pc = peerConnections[uname];
+                const sender = pc.getSenders().find(s => s.track && s.track.kind === 'video');
+                if (sender) {
+                    await sender.replaceTrack(null).catch(() => {});
+                }
+            }
+        }
+
+        function sendSignal(to, type, payload) {
+            fetch('api.php?action=signal_send', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ to, type, payload })
+            }).catch(() => {});
+        }
+
+        function pollSignaling() {
+            if (!isTalkConnected) return;
+            fetch('api.php?action=signal_poll', {
+                method: 'POST',
+                credentials: 'same-origin'
+            })
+            .then(res => res.json())
+            .then(body => {
+                (body.messages || []).forEach(msg => {
+                    if (msg.type === 'offer') handleIncomingOffer(msg.from, msg.payload);
+                    else if (msg.type === 'answer') handleIncomingAnswer(msg.from, msg.payload);
+                    else if (msg.type === 'ice-candidate') handleIncomingIceCandidate(msg.from, msg.payload);
+                    else if (msg.type === 'leave') closePeerConnection(msg.from);
+                });
+            })
+            .catch(() => {});
+        }
+
+
+        function refreshTalkParticipants() {
+            if (!isTalkConnected) return;
+            fetch('api.php?action=talk_list', { method: 'POST', credentials: 'same-origin' })
+                .then(res => res.json())
+                .then(body => {
+                    const participants = body.participants || {};
+                    const previousUsernames = Object.keys(talkParticipantsCache);
+                    const currentUsernames = Object.keys(participants);
+
+                    currentUsernames.forEach(uname => {
+                        if (uname === loggedInUser) return;
+                        if (!peerConnections[uname]) {
+                            if (loggedInUser < uname) {
+                                initiateOfferTo(uname);
+                            } else {
+                                createPeerConnection(uname);
+                            }
+                        }
+                    });
+
+                    previousUsernames.forEach(uname => {
+                        if (!participants[uname] && peerConnections[uname]) {
+                            closePeerConnection(uname);
+                        }
+                    });
+
+                    talkParticipantsCache = participants;
+                    globalData.activeTalkUsers = Object.keys(participants).map(uname => ({
+                        username: uname,
+                        muted: !!participants[uname].muted,
+                        deafened: !!participants[uname].deafened,
+                        camActive: !!participants[uname].camActive,
+                        isSpeaking: !!participants[uname].isSpeaking
+                    }));
+
+                    document.querySelectorAll('audio[id^="remote-audio-"]').forEach(el => {
+                        el.muted = isTalkDeafened;
+                    });
+
+                    renderParticipants();
+                    renderVideoGrid();
+                })
+                .catch(() => {});
+        }
+
+        async function connectTalkRoom() {
+            try {
+                let constraints = {
+                    audio: selectedAudioInputId ? { deviceId: { exact: selectedAudioInputId } } : true,
+                    video: false
+                };
+                talkStream = await navigator.mediaDevices.getUserMedia(constraints);
+                isTalkConnected = true;
+                isTalkMuted = false;
+                isTalkDeafened = false;
+                isCamActive = false;
+                isScreenSharing = false;
+                isSpeaking = false;
+
+                setupAudioAnalyser(talkStream);
+
+                document.getElementById('talk-idle-view').style.display = 'none';
+                document.getElementById('talk-controls').style.display = 'flex';
+
+                await populateDeviceLists();
+
+                const res = await fetch('api.php?action=talk_join', { method: 'POST', credentials: 'same-origin' });
+                const body = await res.json();
+                talkParticipantsCache = {};
+
+                if (signalPollTimer) clearInterval(signalPollTimer);
+                signalPollTimer = setInterval(() => {
+                    pollSignaling();
+                    refreshTalkParticipants();
+                }, 1500);
+
+                refreshTalkParticipants();
+                renderParticipants();
+                renderVideoGrid();
+            } catch (err) {
+                alert("❌ Mikrofon-Zugriff verweigert oder nicht verfügbar!");
+            }
+        }
+
+        function setupAudioAnalyser(stream) {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                microphone = audioContext.createMediaStreamSource(stream);
+                javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+
+                analyser.smoothingTimeConstant = 0.8;
+                analyser.fftSize = 1024;
+
+                microphone.connect(analyser);
+                analyser.connect(javascriptNode);
+                javascriptNode.connect(audioContext.destination);
+
+                javascriptNode.onaudioprocess = function() {
+                    if (!isTalkConnected || isTalkMuted || isTalkDeafened) {
+                        if (isSpeaking) {
+                            isSpeaking = false;
+                            updateMyTalkStateInBackend();
+                        }
+                        return;
+                    }
+                    let array = new Uint8Array(analyser.frequencyBinCount);
+                    analyser.getByteFrequencyData(array);
+                    let values = 0;
+                    for (let i = 0; i < array.length; i++) {
+                        values += array[i];
+                    }
+                    let average = values / array.length;
+                    let speakingNow = average > 18;
+                    if (speakingNow !== isSpeaking) {
+                        isSpeaking = speakingNow;
+                        updateMyTalkStateInBackend();
+                    }
+                };
+            } catch(e) { console.log("Audio Analyser Init Error"); }
+        }
+
+        function disconnectTalkRoom() {
+            if (javascriptNode) { javascriptNode.disconnect(); javascriptNode = null; }
+            if (analyser) { analyser.disconnect(); analyser = null; }
+            if (audioContext && audioContext.state !== 'closed') { audioContext.close(); audioContext = null; }
+
+            if (talkStream) {
+                talkStream.getTracks().forEach(track => track.stop());
+                talkStream = null;
+            }
+            isTalkConnected = false;
+            isSpeaking = false;
+
+            if (signalPollTimer) { clearInterval(signalPollTimer); signalPollTimer = null; }
+
+            Object.keys(peerConnections).forEach(uname => sendSignal(uname, 'leave', {}));
+            closeAllPeerConnections();
+            talkParticipantsCache = {};
+
+            document.getElementById('talk-idle-view').style.display = 'block';
+            document.getElementById('video-container').style.display = 'none';
+            document.getElementById('talk-controls').style.display = 'none';
+            hideAllDeviceMenus();
+
+            fetch('api.php?action=talk_leave', { method: 'POST', credentials: 'same-origin' }).catch(() => {});
+            globalData.activeTalkUsers = (globalData.activeTalkUsers || []).filter(u => (typeof u === 'string' ? u : u.username) !== loggedInUser);
+
+            renderParticipants();
+            renderVideoGrid();
+        }
+
+        async function populateDeviceLists() {
+            try {
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const micSelect = document.getElementById('select-mic');
+                const outputSelect = document.getElementById('select-output');
+                const camSelect = document.getElementById('select-cam');
+
+                micSelect.innerHTML = '';
+                outputSelect.innerHTML = '';
+                camSelect.innerHTML = '';
+
+                devices.forEach(device => {
+                    let option = document.createElement('option');
+                    option.value = device.deviceId;
+                    option.text = device.label || `${device.kind} (${device.deviceId.substr(0,5)}...)`;
+
+                    if (device.kind === 'audioinput') {
+                        micSelect.appendChild(option);
+                    } else if (device.kind === 'audiooutput') {
+                        outputSelect.appendChild(option);
+                    } else if (device.kind === 'videoinput') {
+                        camSelect.appendChild(option);
+                    }
+                });
+            } catch (e) { console.log("Fehler beim Laden der Geräte"); }
+        }
+
+        function toggleDeviceMenu(menuId) {
+            const menu = document.getElementById(menuId);
+            const isOpen = menu.style.display === 'block';
+            hideAllDeviceMenus();
+            if (!isOpen) menu.style.display = 'block';
+        }
+
+        function hideAllDeviceMenus() {
+            document.querySelectorAll('.device-menu').forEach(m => m.style.display = 'none');
+        }
+
+        async function changeAudioInput(deviceId) {
+            selectedAudioInputId = deviceId;
+            if (isTalkConnected) {
+                try {
+                    const newStream = await navigator.mediaDevices.getUserMedia({ audio: { deviceId: { exact: deviceId } } });
+                    const newAudioTrack = newStream.getAudioTracks()[0];
+                    let oldAudioTrack = talkStream.getAudioTracks()[0];
+                    if (oldAudioTrack) {
+                        talkStream.removeTrack(oldAudioTrack);
+                        oldAudioTrack.stop();
+                    }
+                    talkStream.addTrack(newAudioTrack);
+                    newAudioTrack.enabled = !isTalkMuted && !isTalkDeafened;
+
+                    for (const uname of Object.keys(peerConnections)) {
+                        const pc = peerConnections[uname];
+                        const sender = pc.getSenders().find(s => s.track && s.track.kind === 'audio');
+                        if (sender) await sender.replaceTrack(newAudioTrack).catch(() => {});
+                    }
+
+                    setupAudioAnalyser(talkStream);
+                } catch (e) { alert("Fehler beim Wechseln des Mikrofons"); }
+            }
+            hideAllDeviceMenus();
+        }
+
+        async function changeAudioOutput(deviceId) {
+            selectedAudioOutputId = deviceId;
+            const remoteAudioEls = document.querySelectorAll('audio[id^="remote-audio-"]');
+            for (const el of remoteAudioEls) {
+                if (typeof el.setSinkId === 'function') {
+                    try { await el.setSinkId(deviceId); } catch (e) { console.log("Ausgabegerät konnte nicht gesetzt werden"); }
+                }
+            }
+            hideAllDeviceMenus();
+        }
+
+        async function changeVideoInput(deviceId) {
+            selectedVideoInputId = deviceId;
+            if (isCamActive) {
+                try {
+                    const videoStream = await navigator.mediaDevices.getUserMedia({ video: { deviceId: { exact: deviceId } } });
+                    const localVideo = document.getElementById('local-video');
+                    if (localVideo) localVideo.srcObject = videoStream;
+                } catch (e) { alert("Fehler beim Wechseln der Kamera"); }
+            }
+            hideAllDeviceMenus();
+        }
+
+        function startMicTest() {
+            if (!talkStream) {
+                alert("❌ Du musst zuerst dem Talk beitreten, um dein Mikrofon zu testen!");
+                hideAllDeviceMenus();
+                return;
+            }
+            const testAudio = document.createElement('audio');
+            testAudio.srcObject = talkStream;
+            testAudio.muted = false;
+            testAudio.play().then(() => {
+                alert("🎙️ Mikrofontest läuft! Du hörst dich selbst für 4 Sekunden...");
+                setTimeout(() => {
+                    testAudio.pause();
+                    testAudio.srcObject = null;
+                    alert("✅ Mikrofontest beendet.");
+                }, 4000);
+            }).catch(e => {
+                alert("❌ Mikrofontest fehlgeschlagen.");
+            });
+            hideAllDeviceMenus();
+        }
+
+        function toggleTalkMic() {
+            if (!talkStream) return;
+            const audioTrack = talkStream.getAudioTracks()[0];
+            if (!audioTrack) return;
+            isTalkMuted = !isTalkMuted;
+            
+            audioTrack.enabled = !isTalkMuted && !isTalkDeafened;
+            if (isTalkMuted) isSpeaking = false;
+            
+            const btn = document.getElementById('ctrl-mic');
+            if (isTalkMuted) {
+                btn.classList.add('active-state');
+                btn.innerHTML = '<i class="fas fa-microphone-slash"></i> Stumm (Mic)';
+            } else {
+                btn.classList.remove('active-state');
+                btn.innerHTML = '<i class="fas fa-microphone"></i> Mikrofon';
+            }
+            updateMyTalkStateInBackend();
+        }
+
+        function toggleTalkDeafen() {
+            isTalkDeafened = !isTalkDeafened;
+            const btn = document.getElementById('ctrl-deafen');
+            
+            if (talkStream) {
+                talkStream.getAudioTracks().forEach(track => { track.enabled = !isTalkDeafened && !isTalkMuted; });
+            }
+            if (isTalkDeafened) isSpeaking = false;
+
+            if (isTalkDeafened) {
+                btn.classList.add('active-state');
+                btn.innerHTML = '<i class="fas fa-volume-mute"></i> Voll Stumm';
+            } else {
+                btn.classList.remove('active-state');
+                btn.innerHTML = '<i class="fas fa-headphones"></i> Voll Stumm';
+            }
+            updateMyTalkStateInBackend();
+        }
+
+        async function toggleTalkCam() {
+            const btn = document.getElementById('ctrl-cam');
+
+            if (!isCamActive) {
+                try {
+                    let vConstraints = selectedVideoInputId ? { deviceId: { exact: selectedVideoInputId } } : true;
+                    const videoStream = await navigator.mediaDevices.getUserMedia({ video: vConstraints });
+                    
+                    if (isScreenSharing) {
+                        isScreenSharing = false;
+                        document.getElementById('ctrl-screen').classList.remove('active-state');
+                        document.getElementById('ctrl-screen').innerHTML = '<i class="fas fa-desktop"></i> Bildschirm';
+                    }
+
+                    let oldVid = talkStream.getVideoTracks()[0];
+                    if(oldVid) oldVid.stop();
+                    talkStream.addTrack(videoStream.getVideoTracks()[0]);
+
+                    await broadcastVideoTrack(videoStream.getVideoTracks()[0]);
+
+                    isCamActive = true;
+                    btn.classList.add('active-state');
+                    btn.innerHTML = '<i class="fas fa-video-slash"></i> Kamera aus';
+                } catch (err) {
+                    alert("❌ Webcam nicht verfügbar!");
+                }
+            } else {
+                let track = talkStream.getVideoTracks()[0];
+                if (track) track.stop();
+                await removeVideoTrackFromPeers();
+                isCamActive = false;
+                btn.classList.remove('active-state');
+                btn.innerHTML = '<i class="fas fa-video"></i> Kamera';
+            }
+            updateMyTalkStateInBackend();
+        }
+
+        async function toggleTalkScreen() {
+            const btn = document.getElementById('ctrl-screen');
+
+            if (!isScreenSharing) {
+                try {
+                    const screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+                    
+                    if (isCamActive) {
+                        isCamActive = false;
+                        document.getElementById('ctrl-cam').classList.remove('active-state');
+                        document.getElementById('ctrl-cam').innerHTML = '<i class="fas fa-video"></i> Kamera';
+                    }
+
+                    let oldVid = talkStream.getVideoTracks()[0];
+                    if(oldVid) oldVid.stop();
+                    talkStream.addTrack(screenStream.getVideoTracks()[0]);
+
+                    await broadcastVideoTrack(screenStream.getVideoTracks()[0]);
+
+                    isScreenSharing = true;
+                    btn.classList.add('active-state');
+                    btn.innerHTML = '<i class="fas fa-stop-circle"></i> Bildschirm stoppen';
+                    
+                    screenStream.getVideoTracks()[0].onended = function() {
+                        toggleTalkScreen();
+                    };
+                } catch (err) {
+                    console.log("Bildschirmfreigabe abgebrochen");
+                }
+            } else {
+                let track = talkStream.getVideoTracks()[0];
+                if (track) track.stop();
+                await removeVideoTrackFromPeers();
+                isScreenSharing = false;
+                btn.classList.remove('active-state');
+                btn.innerHTML = '<i class="fas fa-desktop"></i> Bildschirm';
+            }
+            updateMyTalkStateInBackend();
+        }
+
+        let lastTalkStateUpdate = 0;
+        let pendingTalkStateUpdate = null;
+
+        function updateMyTalkStateInBackend() {
+            if (!isTalkConnected) return;
+
+            const state = { muted: isTalkMuted, deafened: isTalkDeafened, camActive: isCamActive || isScreenSharing, isSpeaking: isSpeaking };
+
+            if (!globalData.activeTalkUsers) globalData.activeTalkUsers = [];
+            let userObj = globalData.activeTalkUsers.find(u => (typeof u === 'string' ? u : u.username) === loggedInUser);
+            if (userObj && typeof userObj === 'object') {
+                Object.assign(userObj, { username: loggedInUser, ...state });
+            } else {
+                globalData.activeTalkUsers.push({ username: loggedInUser, ...state });
+            }
+            renderParticipants();
+            renderVideoGrid();
+
+            const now = Date.now();
+            pendingTalkStateUpdate = state;
+            if (now - lastTalkStateUpdate < 250) return;
+            lastTalkStateUpdate = now;
+
+            fetch('api.php?action=talk_update', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(pendingTalkStateUpdate)
+            }).catch(() => {});
+        }
+
+        function renderParticipants() {
+            const listEl = document.getElementById('participant-list');
+            const countEl = document.getElementById('participant-count');
+            const countSidebarEl = document.getElementById('talk-sidebar-count');
+            let users = globalData.activeTalkUsers || [];
+            
+            countEl.innerText = users.length;
+            if (users.length === 1) {
+                countSidebarEl.innerText = "(1 Person verbunden)";
+            } else {
+                countSidebarEl.innerText = `(${users.length} Personen verbunden)`;
+            }
+
+            if (users.length === 0) {
+                listEl.innerHTML = `<li style="color: #666; font-size: 0.8rem; text-align: center; padding: 20px 0;">Niemand im Talk</li>`;
+                return;
+            }
+
+            let html = '';
+            users.forEach(item => {
+                let username = typeof item === 'string' ? item : item.username;
+                let muted = typeof item === 'object' ? item.muted : false;
+                let deafened = typeof item === 'object' ? item.deafened : false;
+                let camActive = typeof item === 'object' ? item.camActive : false;
+                let speaking = typeof item === 'object' ? item.isSpeaking : false;
+
+                let u = (globalData.users || []).find(usr => usr.username === username);
+                let dName = u?.displayName || username;
+                let avatar = u?.avatar || DEFAULT_GLADBACH_AVATAR;
+
+                let iconsHtml = '<div style="display:flex; gap:6px; align-items:center;">';
+                if (username !== loggedInUser) {
+                    const pc = peerConnections[username];
+                    const connected = pc && pc.connectionState === 'connected';
+                    iconsHtml += connected
+                        ? '<i class="fas fa-signal" style="color:#25D366; font-size:0.7rem;" title="Verbunden"></i>'
+                        : '<i class="fas fa-circle-notch fa-spin" style="color:#f1c40f; font-size:0.7rem;" title="Verbindung wird aufgebaut..."></i>';
+                }
+                if (deafened) {
+                    iconsHtml += '<i class="fas fa-volume-mute" style="color: #ff416c; font-size: 0.75rem;" title="Voll stumm"></i>';
+                }
+                if (muted) {
+                    iconsHtml += '<i class="fas fa-microphone-slash" style="color: #ff416c; font-size: 0.75rem;" title="Stumm"></i>';
+                } else if (!deafened) {
+                    iconsHtml += '<i class="fas fa-microphone" style="color: #25D366; font-size: 0.75rem;" title="Aktiv"></i>';
+                }
+                if (camActive) {
+                    iconsHtml += '<i class="fas fa-video" style="color: var(--gladbach); font-size: 0.75rem;" title="Kamera an"></i>';
+                }
+                iconsHtml += '</div>';
+
+                let speakingClass = speaking ? 'speaking' : '';
+
+                html += `<li class="participant-item ${speakingClass}">
+                    <img src="${sanitizeImageUrl(avatar)}" alt="Avatar">
+                    <span style="flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${escapeHtml(dName)}</span>
+                    ${iconsHtml}
+                </li>`;
+            });
+            listEl.innerHTML = html;
+        }
+
+        function renderVideoGrid() {
+            const container = document.getElementById('video-container');
+            let users = globalData.activeTalkUsers || [];
+            if (!isTalkConnected || users.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            container.style.display = 'grid';
+            let html = '';
+
+            users.forEach(item => {
+                let username = typeof item === 'string' ? item : item.username;
+                let isLocal = username === loggedInUser;
+                let u = (globalData.users || []).find(usr => usr.username === username);
+                let dName = u?.displayName || username;
+                let avatar = u?.avatar || DEFAULT_GLADBACH_AVATAR;
+                let camActive = typeof item === 'object' ? item.camActive : false;
+                let speaking = typeof item === 'object' ? item.isSpeaking : false;
+                let speakingClass = speaking ? 'speaking' : '';
+                let safeId = cssSafeId(username);
+
+                if (isLocal) {
+                    let hasVisual = isCamActive || isScreenSharing;
+                    html += `<div class="video-box ${speakingClass}" id="local-video-box">
+                        <img id="local-avatar-view" src="${sanitizeImageUrl(avatar)}" class="avatar-placeholder" alt="Profilbild" style="${hasVisual ? 'display:none;' : 'display:block;'}">
+                        <video id="local-video" autoplay muted playsinline style="${hasVisual ? 'display:block;' : 'display:none;'}"></video>
+                        <span id="local-video-label">${escapeHtml(dName)} (Du)</span>
+                    </div>`;
+                } else {
+                    const pc = peerConnections[username];
+                    const isConnecting = !pc || (pc.connectionState !== 'connected' && pc.connectionState !== undefined);
+                    const connIndicator = isConnecting
+                        ? `<span class="peer-connecting-badge" title="Verbindung wird aufgebaut..."><i class="fas fa-circle-notch fa-spin"></i></span>`
+                        : '';
+
+                    html += `<div class="video-box ${speakingClass}">
+                        <img src="${sanitizeImageUrl(avatar)}" class="avatar-placeholder" alt="Avatar" style="${camActive ? 'display:none;' : 'display:block;'}">
+                        <video id="remote-video-${safeId}" autoplay playsinline style="${camActive ? 'display:block;' : 'display:none;'} width:100%; height:100%; object-fit:cover;"></video>
+                        ${connIndicator}
+                        <span>${escapeHtml(dName)}</span>
+                    </div>`;
+                }
+            });
+            container.innerHTML = html;
+
+            if ((isCamActive || isScreenSharing) && talkStream) {
+                const localVideoEl = document.getElementById('local-video');
+                if (localVideoEl && localVideoEl.srcObject !== talkStream) {
+                    localVideoEl.srcObject = talkStream;
+                }
+            }
+
+            Object.keys(remoteStreams).forEach(uname => attachRemoteStreamToDom(uname));
+        }
+
+        function generateKey() {
+            if(!checkPermission('keys')) return;
+            if(!globalData.keys) globalData.keys = [];
+
+            let activeCount = globalData.keys.filter(k => k.status === 'Aktiv').length;
+            if (activeCount >= 5) {
+                alert("❌ Es können maximal 5 aktive Admin-Keys gleichzeitig existieren!");
+                return;
+            }
+
+            fetch('api.php?action=generate_key', { method: 'POST', credentials: 'same-origin' })
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.status === 'success') {
+                        globalData.keys.push({ code: data.code, creator: loggedInUser, status: 'Aktiv' });
+                        renderKeys();
+                        if (typeof globalData.auditLogs !== 'undefined') {
+                            loadFromHosterSilent();
+                        }
+                    } else {
+                        alert('❌ ' + (data && data.message ? data.message : 'Key konnte nicht erstellt werden.'));
+                    }
+                })
+                .catch(() => alert('❌ Fehler beim Erstellen des Keys.'));
+        }
+        function toggleKey(i) { globalData.keys[i].status = globalData.keys[i].status === 'Aktiv' ? 'Verbraucht' : 'Aktiv'; saveToHoster(); renderKeys(); }
+        function deleteKey(i) { globalData.keys.splice(i, 1); saveToHoster(); renderKeys(); }
+        function renderKeys() {
+            const tbody = document.getElementById('key-table-body'); tbody.innerHTML = '';
+            (globalData.keys || []).forEach((k, i) => {
+                tbody.innerHTML += `<tr><td><code>${escapeHtml(k.code)}</code></td><td>${escapeHtml(k.creator)}</td><td>${escapeHtml(k.status)}</td><td><button class="btn-action" onclick="toggleKey(${i})">Status</button> <button class="btn-delete" onclick="deleteKey(${i})">Löschen</button></td></tr>`;
+            });
+        }
+
+        function cloneData(value) {
+            try { return JSON.parse(JSON.stringify(value)); } catch (_) { return Array.isArray(value) ? value.slice() : { ...value }; }
+        }
+
+        function normalizeTeamRole(role) {
+            const value = String(role || '').trim();
+            if (value === 'Co-Owner') return 'Co Owner';
+            if (value === 'Mod') return 'Moderator';
+            return value;
+        }
+
+        function validateTeamMember(name, role) {
+            if (!/^[A-Za-z0-9_]{3,16}$/.test(name)) {
+                alert('Der Minecraft-Name muss 3 bis 16 Zeichen haben und darf nur Buchstaben, Zahlen und Unterstriche enthalten.');
+                return false;
+            }
+            const allowed = ['Owner','Co Owner','Developer','Admin','Moderator','Supporter','Test Supporter','Builder'];
+            if (!allowed.includes(role)) {
+                alert('Ungültiger Team-Rang.');
+                return false;
+            }
+            return true;
+        }
+
+        async function saveTeamDirect(team, actionText) {
+            const response = await fetch('api.php?action=save_team', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({team})
+            });
+            let body = {};
+            try { body = await response.json(); } catch (_) {}
+            if (!response.ok || body.status !== 'success') throw new Error(body.message || 'Team konnte nicht gespeichert werden.');
+            globalData.team = Array.isArray(body.team) ? body.team : team;
+            renderTeamTable();
+            return body.team;
+        }
+
+        async function addTeamMember() {
+            if(!checkPermission('team')) return;
+            const input = document.getElementById('new-member-name');
+            const roleInput = document.getElementById('new-member-role');
+            const name = input.value.trim();
+            const role = normalizeTeamRole(roleInput.value);
+            if(!validateTeamMember(name, role)) return;
+            const oldTeam = Array.isArray(globalData.team) ? cloneData(globalData.team) : [];
+            if(oldTeam.some(member => String(member.name || '').toLowerCase() === name.toLowerCase())) { alert('Dieses Teammitglied ist bereits eingetragen.'); return; }
+            if(oldTeam.length >= 50) { alert('Maximal 50 Teammitglieder sind erlaubt.'); return; }
+            const nextTeam = [...oldTeam, {name, role}];
+            try {
+                await saveTeamDirect(nextTeam, 'Teammitglied hinzugefügt');
+                input.value = '';
+                alert('Teammitglied hinzugefügt.');
+            } catch (error) {
+                globalData.team = oldTeam;
+                renderTeamTable();
+                alert(error.message || 'Team konnte nicht gespeichert werden.');
+            }
+        }
+
+        async function deleteTeamMember(i) {
+            if(!checkPermission('rankDelete')) return;
+            if(!Array.isArray(globalData.team) || !globalData.team[i]) return;
+            if(!confirm('Dieses Teammitglied wirklich entfernen?')) return;
+            const oldTeam = cloneData(globalData.team);
+            const nextTeam = oldTeam.filter((_, index) => index !== i);
+            try { await saveTeamDirect(nextTeam, 'Teammitglied entfernt'); alert('Teammitglied entfernt.'); }
+            catch (error) { globalData.team = oldTeam; renderTeamTable(); alert(error.message || 'Änderung konnte nicht gespeichert werden.'); }
+        }
+
+        async function updateTeamRole(i, role) {
+            if(!checkPermission('team')) return;
+            const oldTeam = cloneData(globalData.team || []);
+            if (!oldTeam[i]) return;
+            role = normalizeTeamRole(role);
+            if (!validateTeamMember(oldTeam[i].name, role)) { renderTeamTable(); return; }
+            oldTeam[i].role = role;
+            try { await saveTeamDirect(oldTeam, 'Teamrang geändert'); }
+            catch (error) { globalData.team = globalData.team || []; renderTeamTable(); alert(error.message || 'Rang konnte nicht gespeichert werden.'); }
+        }
+
+        async function saveTeamChanges() {
+            if(!checkPermission('team')) return;
+            const team = Array.isArray(globalData.team) ? cloneData(globalData.team) : [];
+            const seen = new Set();
+            for (const member of team) {
+                const name = String(member?.name || '').trim();
+                const role = normalizeTeamRole(member?.role);
+                if (!validateTeamMember(name, role)) return;
+                const key = name.toLowerCase();
+                if (seen.has(key)) { alert('Doppelte Teammitglieder sind nicht erlaubt.'); return; }
+                seen.add(key);
+                member.name = name; member.role = role;
+            }
+            try { await saveTeamDirect(team, 'Team gespeichert'); alert('Team gespeichert.'); }
+            catch (error) { alert(error.message || 'Team konnte nicht gespeichert werden.'); }
+        }
+
+        function renderTeamTable() {
+            const tbody = document.getElementById('team-table-body');
+            if (!tbody) return;
+            while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+            const query = String(document.getElementById('team-search')?.value || '').trim().toLowerCase();
+            const roles = ['Owner','Co Owner','Developer','Admin','Moderator','Supporter','Test Supporter','Builder'];
+            (globalData.team || []).forEach((m, i) => {
+                const name = String(m?.name || ''); const role = normalizeTeamRole(m?.role);
+                if (query && !(name.toLowerCase().includes(query) || role.toLowerCase().includes(query))) return;
+                const tr = document.createElement('tr');
+                const nameTd = document.createElement('td'); nameTd.textContent = name;
+                const roleTd = document.createElement('td');
+                const select = document.createElement('select');
+                roles.forEach(r => { const o=document.createElement('option'); o.value=r; o.textContent=r; o.selected=r===role; select.appendChild(o); });
+                select.addEventListener('change', () => updateTeamRole(i, select.value));
+                roleTd.appendChild(select);
+                const actionTd = document.createElement('td');
+                const del = document.createElement('button'); del.className='btn-delete'; del.type='button'; del.textContent='Löschen'; del.addEventListener('click',()=>deleteTeamMember(i));
+                actionTd.appendChild(del); tr.append(nameTd,roleTd,actionTd); tbody.appendChild(tr);
+            });
+            if (!tbody.children.length) {
+                const tr=document.createElement('tr'); const td=document.createElement('td'); td.colSpan=3; td.textContent=query?'Keine Treffer.':'Noch keine Teammitglieder.'; tr.appendChild(td); tbody.appendChild(tr);
+            }
+        }
+
+        async function refreshTeamFromServer() {
+            try {
+                const r=await fetch('api.php?action=get_team',{cache:'no-store',credentials:'same-origin'});
+                const d=await r.json();
+                if(!r.ok || !Array.isArray(d.team)) throw new Error('Team konnte nicht geladen werden.');
+                globalData.team=d.team; localStorage.setItem('smp_team_members',JSON.stringify(d.team)); renderTeamTable();
+            } catch(e) { alert(e.message || 'Team konnte nicht geladen werden.'); }
+        }
+
+        function exportTeam() {
+            const blob=new Blob([JSON.stringify({team:globalData.team||[]},null,2)],{type:'application/json'});
+            const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='team-backup.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+        }
+
+        async function importTeam(file) {
+            if(!file || !checkPermission('team')) return;
+            try {
+                const parsed=JSON.parse(await file.text()); const team=Array.isArray(parsed)?parsed:parsed.team;
+                if(!Array.isArray(team)) throw new Error('Keine Teamliste gefunden.');
+                const normalized=team.map(m=>({name:String(m?.name||'').trim(),role:normalizeTeamRole(m?.role)}));
+                const seen=new Set();
+                for(const m of normalized){ if(!validateTeamMember(m.name,m.role)) throw new Error('Ungültiger Eintrag: '+m.name); const k=m.name.toLowerCase(); if(seen.has(k)) throw new Error('Doppelter Name: '+m.name); seen.add(k); }
+                if(normalized.length>50) throw new Error('Maximal 50 Teammitglieder erlaubt.');
+                await saveTeamDirect(normalized,'Team importiert');
+                alert('Team importiert.');
+            } catch(e) { alert(e.message || 'Import fehlgeschlagen.'); }
+        }
+
+        function renderPermissions() {
+            const tbody = document.getElementById('perms-table-body'); tbody.innerHTML = '';
+            (globalData.users || []).forEach(u => {
+                let p = u.permissions || {}; let isOwner = u.username === "Niklas1882";
+                tbody.innerHTML += `<tr data-username="${escapeHtml(u.username)}">
+                    <td><strong>${escapeHtml(u.username)}</strong></td>
+                    <td><input type="checkbox" class="perm-keys" ${p.keys||isOwner?'checked':''} ${isOwner?'disabled':''}></td>
+                    <td><input type="checkbox" class="perm-team" ${p.team||isOwner?'checked':''} ${isOwner?'disabled':''}></td>
+                    <td><input type="checkbox" class="perm-news" ${p.news||isOwner?'checked':''} ${isOwner?'disabled':''}></td>
+                    <td><input type="checkbox" class="perm-rankdel" ${p.rankDelete||isOwner?'checked':''} ${isOwner?'disabled':''}></td>
+                </tr>`;
+            });
+        }
+        function savePermissions() {
+            if(loggedInUser !== "Niklas1882") { alert("Nur Owner!"); return; }
+            document.querySelectorAll('#perms-table-body tr').forEach(row => {
+                let username = row.getAttribute('data-username');
+                let userObj = globalData.users.find(u => u.username === username);
+                if (userObj && username !== "Niklas1882") {
+                    userObj.permissions = { keys: row.querySelector('.perm-keys').checked, team: row.querySelector('.perm-team').checked, news: row.querySelector('.perm-news').checked, rankDelete: row.querySelector('.perm-rankdel').checked };
+                }
+            });
+            saveToHoster(); alert("Berechtigungen gespeichert!");
+        }
+
+        function addNews() {
+            if(!checkPermission('news')) return;
+            const title = document.getElementById('news-title').value.trim();
+            const category = document.getElementById('news-category').value;
+            const text = document.getElementById('news-text').value.trim();
+            if(!title) return;
+            if(!globalData.news) globalData.news = [];
+            globalData.news.push({ title, category, text, date: new Date().toLocaleDateString('de-DE') });
+            renderNewsTable();
+        }
+        function deleteNewsItem(i) {
+            if(!checkPermission('news')) return;
+            globalData.news.splice(i, 1); renderNewsTable();
+        }
+        function saveNewsChanges() {
+            if(!checkPermission('news')) return;
+            saveToHoster(); alert("News gespeichert!");
+        }
+        function renderNewsTable() {
+            const tbody = document.getElementById('news-table-body'); tbody.innerHTML = '';
+            (globalData.news || []).forEach((n, i) => {
+                tbody.innerHTML += `<tr><td><strong>[${escapeHtml(n.category)}]</strong> ${escapeHtml(n.title)}</td><td>${escapeHtml(n.date)}</td><td><button class="btn-delete" onclick="deleteNewsItem(${i})">Löschen</button></td></tr>`;
+            });
+        }
+
+        function addGalleryImage() {
+            const url = document.getElementById('gallery-img-url-fallback').value.trim();
+            const title = document.getElementById('gallery-img-title').value.trim();
+            if(!url) return;
+            if(!globalData.gallery) globalData.gallery = [];
+            globalData.gallery.push({ url, title });
+            renderGalleryTable();
+        }
+        function deleteGalleryImage(i) { globalData.gallery.splice(i, 1); renderGalleryTable(); }
+        function saveGalleryChanges() { saveToHoster(); alert("Galerie gespeichert!"); }
+        function renderGalleryTable() {
+            const tbody = document.getElementById('gallery-table-body'); if (!tbody) return;
+            tbody.innerHTML = '';
+            (globalData.gallery || []).forEach((g, i) => {
+                tbody.innerHTML += `<tr><td>${escapeHtml(g.url)}</td><td>${escapeHtml(g.title)}</td><td><button class="btn-delete" onclick="deleteGalleryImage(${i})">Löschen</button></td></tr>`;
+            });
+        }
+
+        function addJoinStep() {
+            const title = document.getElementById('step-title-input').value.trim();
+            const desc = document.getElementById('step-desc-input').value.trim();
+            if(!title) return;
+            if(!globalData.joinSteps) globalData.joinSteps = [];
+            globalData.joinSteps.push({ title, desc });
+            renderStepsTable();
+        }
+        function deleteJoinStep(i) { globalData.joinSteps.splice(i, 1); renderStepsTable(); }
+        function saveJoinConfig() {
+            const ip = document.getElementById('config-ip').value.trim();
+            if (!/^[a-zA-Z0-9.-]+(?::\d{1,5})?$/.test(ip)) { alert('Ungültige Server-IP/Domain.'); return; }
+            globalData.serverIp = ip;
+            globalData.siteNotice = {
+                enabled: document.getElementById('notice-enabled').checked,
+                type: document.getElementById('notice-type').value,
+                title: document.getElementById('notice-title').value.trim().slice(0,80),
+                text: document.getElementById('notice-text').value.trim().slice(0,500)
+            };
+            saveToHoster({handleErrors:true, action:'Join-Konfiguration und Website-Hinweis geändert'}).then(() => alert('Join-Config gespeichert!')).catch(e => alert('Speichern fehlgeschlagen: ' + e.message));
+        }
+        function renderStepsTable() {
+            const tbody = document.getElementById('steps-table-body'); if (!tbody) return;
+            tbody.innerHTML = '';
+            (globalData.joinSteps || []).forEach((s, i) => {
+                tbody.innerHTML += `<tr><td><strong>${escapeHtml(s.title)}</strong><br>${escapeHtml(s.desc)}</td><td><button class="btn-delete" onclick="deleteJoinStep(${i})">Löschen</button></td></tr>`;
+            });
+        }
+
+        function updateChatCharCount() {
+            const input = document.getElementById('chat-input');
+            const counter = document.getElementById('chat-char-count');
+            const len = input.value.length;
+            counter.innerText = len > 800 ? `${len}/1000` : '';
+            counter.style.color = len > 950 ? '#ff416c' : '#666';
+            notifyTyping();
+        }
+
+        let lastTypingPing = 0;
+        let typingStopTimer = null;
+
+        function notifyTyping() {
+            const now = Date.now();
+            if (now - lastTypingPing > 2000) {
+                lastTypingPing = now;
+                fetch('api.php?action=typing', {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode: 'update', isTyping: true })
+                }).catch(() => {});
+            }
+            clearTimeout(typingStopTimer);
+            typingStopTimer = setTimeout(() => {
+                fetch('api.php?action=typing', {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode: 'update', isTyping: false })
+                }).catch(() => {});
+            }, 3000);
+        }
+
+        function pollTypingIndicator() {
+            fetch('api.php?action=typing', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mode: 'peek' })
+            })
+            .then(res => res.json())
+            .then(body => refreshTypingIndicator(body.typingUsers))
+            .catch(() => {});
+        }
+
+        function refreshTypingIndicator(typingUsers) {
+            const el = document.getElementById('chat-typing-indicator');
+            if (!el) return;
+            if (!typingUsers || typingUsers.length === 0) {
+                el.innerText = '';
+                return;
+            }
+            const names = typingUsers.map(uname => {
+                let u = (globalData.users || []).find(user => user.username === uname);
+                return u?.displayName || uname;
+            });
+            if (names.length === 1) {
+                el.innerText = `${names[0]} tippt...`;
+            } else if (names.length === 2) {
+                el.innerText = `${names[0]} und ${names[1]} tippen...`;
+            } else {
+                el.innerText = `${names.length} Personen tippen...`;
+            }
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const sendBtn = document.getElementById('chat-send-btn');
+            const text = input.value.trim();
+            if (!text) return;
+
+            input.disabled = true;
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+            fetch('api.php?action=send_chat', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text })
+            })
+            .then(res => res.json().then(body => ({ ok: res.ok, body })))
+            .then(({ ok, body }) => {
+                if (ok && body.status === 'success') {
+                    input.value = '';
+                    updateChatCharCount();
+                    clearTimeout(typingStopTimer);
+                    loadChatOnly();
+                    scrollChatToBottom(true);
+                } else {
+                    alert('Nachricht konnte nicht gesendet werden: ' + (body.message || 'Unbekannter Fehler'));
+                }
+            })
+            .catch((err) => alert('Nachricht konnte nicht gesendet werden: ' + (err.message || 'Netzwerkfehler')))
+            .finally(() => {
+                input.disabled = false;
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i>';
+                input.focus();
+            });
+        }
+
+        let chatWasAtBottom = true;
+
+        function isChatScrolledToBottom(chatBox) {
+            return chatBox.scrollHeight - chatBox.scrollTop - chatBox.clientHeight < 40;
+        }
+
+        function scrollChatToBottom(force) {
+            const chatBox = document.getElementById('chat-box');
+            if (!chatBox) return;
+            if (force || chatWasAtBottom) {
+                chatBox.scrollTop = chatBox.scrollHeight;
+                document.getElementById('chat-scroll-bottom').style.display = 'none';
+            }
+        }
+
+        function renderChat(messages) {
+            const chatBox = document.getElementById('chat-box'); if (!chatBox) return;
+            if (!Array.isArray(messages)) return;
+
+            chatWasAtBottom = isChatScrolledToBottom(chatBox);
+
+            let html = '';
+            let lastUser = null;
+            let lastTime = null;
+            let lastDay = null;
+
+            messages.forEach((msg, i) => {
+                let u = (globalData.users || []).find(user => user.username === msg.user);
+                let dName = u?.displayName || msg.user;
+                let isOwn = msg.user === loggedInUser;
+                let avatar = sanitizeImageUrl(u?.avatar || DEFAULT_GLADBACH_AVATAR);
+                let color = u?.badgeColor || '#0072CE';
+
+                if (msg.date && msg.date !== lastDay) {
+                    html += `<div class="chat-day-divider"><span>${escapeHtml(msg.date)}</span></div>`;
+                    lastDay = msg.date;
+                    lastUser = null;
+                }
+
+                let grouped = (msg.user === lastUser);
+                lastUser = msg.user;
+
+                html += `
+                    <div class="chat-msg ${isOwn ? 'own' : ''} ${grouped ? 'grouped' : ''}">
+                        <div class="chat-avatar-slot">
+                            <img class="chat-avatar" src="${avatar}" alt="${escapeHtml(dName)}">
+                        </div>
+                        <div class="chat-msg-body">
+                            <div class="chat-msg-header">
+                                <span class="chat-username" data-username="${escapeHtml(msg.user)}" style="color:${/^#[0-9a-f]{6}$/i.test(color) ? color : '#ff4b2b'};">${escapeHtml(dName)}</span>
+                                <span class="chat-time">${escapeHtml(msg.time || '')}</span>
+                            </div>
+                            <div class="chat-bubble">${escapeHtml(msg.text)}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            if (messages.length === 0) {
+                html = `<div class="chat-system-msg">Noch keine Nachrichten. Schreibe die erste Nachricht.</div>`;
+            }
+
+            chatBox.innerHTML = html;
+            chatBox.querySelectorAll('.chat-username').forEach(el => {
+                el.onclick = () => openProfile(el.getAttribute('data-username'));
+            });
+
+            scrollChatToBottom(false);
+
+            chatBox.onscroll = () => {
+                const atBottom = isChatScrolledToBottom(chatBox);
+                document.getElementById('chat-scroll-bottom').style.display = atBottom ? 'none' : 'block';
+            };
+        }
+
+        function renderAuditLog() {
+            const tbody = document.getElementById('audit-table-body'); if (!tbody) return;
+            tbody.innerHTML = '';
+            (globalData.auditLogs || []).forEach(log => {
+                tbody.innerHTML += `<tr><td>${escapeHtml(log.time)}</td><td>${escapeHtml(log.user)}</td><td>${escapeHtml(log.action)}</td></tr>`;
+            });
+        }
+    
+        function renderMaintenance(){
+            const m = globalData.maintenance || {enabled:false,title:'Wartungsarbeiten',text:'Die Website wird gerade aktualisiert. Bitte später erneut versuchen.'};
+            const enabled = document.getElementById('maintenance-enabled');
+            const title = document.getElementById('maintenance-title');
+            const text = document.getElementById('maintenance-text');
+            const status = document.getElementById('maintenance-status');
+            if(enabled) enabled.checked = !!m.enabled;
+            if(title) title.value = m.title || '';
+            if(text) text.value = m.text || '';
+            if(status){
+                status.textContent = m.enabled ? 'Aktiv' : 'Deaktiviert';
+                status.style.background = m.enabled ? '#4a2020' : '#19311c';
+                status.style.color = m.enabled ? '#ffd0d0' : '#9ee38c';
+            }
+            toggleMaintenancePreview();
+        }
+        function toggleMaintenancePreview(){
+            const enabled=document.getElementById('maintenance-enabled')?.checked;
+            const title=(document.getElementById('maintenance-title')?.value||'Wartungsarbeiten').trim();
+            const text=(document.getElementById('maintenance-text')?.value||'Die Website wird gerade aktualisiert.').trim();
+            const out=document.getElementById('maintenance-preview-text');
+            if(out) out.textContent = enabled ? (title + ': ' + text) : 'Wartungsmodus ist deaktiviert.';
+        }
+        function saveMaintenance(){
+            if(!checkPermission('config')) return;
+            globalData.maintenance={
+                enabled: !!document.getElementById('maintenance-enabled')?.checked,
+                title: (document.getElementById('maintenance-title')?.value||'Wartungsarbeiten').trim().slice(0,80),
+                text: (document.getElementById('maintenance-text')?.value||'Die Website wird gerade aktualisiert. Bitte später erneut versuchen.').trim().slice(0,500)
+            };
+            saveToHoster({handleErrors:true, action:'Wartungsmodus geändert'}).then(()=>{
+                renderMaintenance();
+                alert(globalData.maintenance.enabled ? 'Wartungsmodus aktiviert.' : 'Wartungsmodus deaktiviert.');
+            }).catch(e=>alert('Speichern fehlgeschlagen: '+e.message));
+        }
+        function clearTeamChat(){
+            if(loggedInUser !== 'Niklas1882' && !((globalData.users||[]).find(u=>u.username===loggedInUser)?.isOwner)) {
+                alert('Nur der Owner darf den Team-Chat leeren.'); return;
+            }
+            if(!confirm('Wirklich alle Team-Chat-Nachrichten löschen?')) return;
+            fetch('api.php?action=clear_chat',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:'{}'})
+              .then(r=>r.json().then(b=>({ok:r.ok,b}))).then(({ok,b})=>{
+                if(!ok) throw new Error(b.message||'Fehler');
+                unreadChatCount=0; lastKnownChatLength=0; updateChatBadge(); renderChat([]); alert('Team-Chat wurde geleert.');
+              }).catch(e=>alert('Chat konnte nicht geleert werden: '+e.message));
+        }
+        function clearAuditLog(){
+            if(loggedInUser !== 'Niklas1882' && !((globalData.users||[]).find(u=>u.username===loggedInUser)?.isOwner)) {
+                alert('Nur der Owner darf das Protokoll leeren.'); return;
+            }
+            if(!confirm('Wirklich das komplette Admin-Protokoll löschen?')) return;
+            fetch('api.php?action=clear_audit',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:'{}'})
+              .then(r=>r.json().then(b=>({ok:r.ok,b}))).then(({ok,b})=>{
+                if(!ok) throw new Error(b.message||'Fehler');
+                globalData.auditLogs=[]; unreadAuditCount=0; updateAuditBadge(); renderAuditLog(); alert('Protokoll wurde geleert.');
+              }).catch(e=>alert('Protokoll konnte nicht geleert werden: '+e.message));
+        }
+
+        let newsDraftSetupDone = false;
+        function setupNewsDraft(){
+            if(newsDraftSetupDone) return;
+            newsDraftSetupDone = true;
+            ['news-title','news-text'].forEach(id=>{
+                const el=document.getElementById(id); if(!el) return;
+                const key='bernbesse_news_draft_'+id;
+                const saved=localStorage.getItem(key);
+                if(saved && !el.value) el.value=saved;
+                el.addEventListener('input',()=>localStorage.setItem(key,el.value));
+            });
+        }
+
+        function renderOverview(){
+            const users=(globalData.users||[]), keys=(globalData.keys||[]), team=(globalData.team||[]), news=(globalData.news||[]);
+            const activeKeys=keys.filter(k=>k.status==='Aktiv').length;
+            const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+            set('stat-users',users.length);set('stat-keys',activeKeys);set('stat-team',team.length);set('stat-news',news.length);
+            set('sidebar-user-label', loggedInUser ? 'Angemeldet als '+loggedInUser : 'Verwaltung');
+        }
+        function switchTab(tabName, btn){
+            document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+            const card=document.getElementById('card-'+tabName); if(card) card.classList.add('active');
+            document.querySelectorAll('.sidebar-btn').forEach(b=>b.classList.remove('active'));
+            if(btn) btn.classList.add('active');
+            if(tabName==='overview') renderOverview();
+            if(tabName==='permissions') renderPermissions();
+            if(tabName==='chat'){unreadChatCount=0;updateChatBadge();}
+            if(tabName==='audit'){unreadAuditCount=0;updateAuditBadge();}
+            if(tabName==='maintenance'){renderMaintenance();}
+        }
+        function refreshAdminData(){
+            const h=document.getElementById('system-health'); if(h) h.textContent='Daten werden geladen ...';
+            loadFromHoster();
+            setTimeout(()=>{renderOverview();if(h)h.textContent='Daten erfolgreich aktualisiert: '+new Date().toLocaleTimeString('de-DE');},700);
+        }
+        function exportAdminData(){
+            const clean=JSON.parse(JSON.stringify(globalData||{}));
+            if(Array.isArray(clean.users)) clean.users=clean.users.map(u=>{const x={...u};delete x.pass;delete x.passHash;return x;});
+            delete clean.auditLogs;
+            const blob=new Blob([JSON.stringify(clean,null,2)],{type:'application/json'});
+            const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='bernbesse-config-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+        }
+        function copyCurrentServerIp(){
+            const ip=(globalData&&globalData.serverIp)||document.getElementById('config-ip')?.value||'';
+            if(!ip)return;
+            navigator.clipboard?.writeText(ip).then(()=>alert('Serveradresse kopiert.')).catch(()=>prompt('Serveradresse:',ip));
+        }
+        document.addEventListener('keydown',e=>{
+            if(!loggedInUser)return;
+            if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();document.getElementById('chat-input')?.focus();}
+            if(e.key==='Escape') closeProfile?.();
+        });</script>
+
+<script id="bernbesse-v9-layout">
+(function(){
+  const header=document.querySelector('.site-header');
+  const nav=document.querySelector('.main-nav');
+  if(header && nav && !document.querySelector('.mobile-menu-toggle')){
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.className='mobile-menu-toggle';
+    btn.setAttribute('aria-label','Menü öffnen');
+    btn.setAttribute('aria-expanded','false');
+    btn.innerHTML='<span aria-hidden="true">☰</span>';
+    const admin=header.querySelector('.admin-link');
+    if(admin) admin.parentNode.insertBefore(btn,admin); else header.querySelector('.header-inner')?.appendChild(btn);
+    const close=()=>{nav.classList.remove('mobile-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Menü öffnen');btn.innerHTML='<span aria-hidden="true">☰</span>';};
+    btn.addEventListener('click',()=>{
+      const open=nav.classList.toggle('mobile-open');
+      btn.setAttribute('aria-expanded',String(open));
+      btn.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+      btn.innerHTML='<span aria-hidden="true">'+(open?'×':'☰')+'</span>';
+    });
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+    window.addEventListener('resize',()=>{if(window.innerWidth>900) close();},{passive:true});
+  }
+  if(document.documentElement.scrollHeight > window.innerHeight * 1.5 && !document.querySelector('.back-to-top')){
+    const b=document.createElement('button');
+    b.className='back-to-top'; b.type='button'; b.textContent='Nach oben'; b.setAttribute('aria-label','Nach oben');
+    Object.assign(b.style,{position:'fixed',right:'16px',bottom:'16px',zIndex:'900',display:'none',padding:'9px 12px',border:'1px solid var(--line,#2a3339)',borderRadius:'8px',background:'#121814',color:'#e8eee9',cursor:'pointer',fontSize:'12px',boxShadow:'0 8px 24px rgba(0,0,0,.25)'});
+    document.body.appendChild(b);
+    const update=()=>{b.style.display=window.scrollY>500?'block':'none'};
+    window.addEventListener('scroll',update,{passive:true}); update();
+    b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  }
+})();</script>
+</body>
+</html>
